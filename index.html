@@ -31,7 +31,13 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a { 
+            color: white; 
+            margin: 0 18px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: 0.3s; 
+        }
         nav a:hover { color: var(--neon-pink); }
 
         header {
@@ -42,101 +48,38 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 20px;
         }
         .logo {
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 6.5rem;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            max-width: 720px;
+            width: 100%;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 50px rgba(255, 0, 255, 0.7));
         }
         .subtitle {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             margin-top: 15px;
             color: #ff00ff;
-            text-shadow: 0 0 20px var(--neon-pink);
+            text-shadow: 0 0 25px var(--neon-pink);
         }
-
-        .section { padding: 130px 5% 100px; max-width: 1400px; margin: 0 auto; }
-        .section h2 {
-            font-size: 3.6rem;
-            text-align: center;
-            margin-bottom: 70px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 35px;
-        }
-        .card {
-            background: #111;
-            border: 2px solid #333;
-            border-radius: 20px;
-            padding: 40px;
-            transition: all 0.5s;
-        }
-        .card:hover {
-            transform: translateY(-20px);
-            border-color: var(--neon-pink);
-            box-shadow: 0 0 50px rgba(255,0,255,0.4);
-        }
-        .emoji { font-size: 4rem; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#archivo">🧬 ARCHIVO</a>
-        <a href="#investiga">🎯 INVESTIGA</a>
-        <a href="#difunde">🚀 DIFUNDE</a>
-        <a href="#olvidado">🧠 OLVIDADOS</a>
+        <a href="#adn">🧬 ADN</a>
+        <a href="#videos">📹 VIDEOS</a>
+        <a href="#cientificos">🧠 CIENTÍFICOS</a>
     </nav>
 
     <header>
-        <img src="https://i.imgur.com/0zqKXzE.png" alt="Logo CAZADOR" class="logo"> <!-- Reemplaza con tu logo si quieres subirlo -->
-        <h1>CAZADOR</h1>
+        <img src="LOGO.png" alt="Logo CAZADOR" class="logo">
         <p class="subtitle">Ciencia en Defensa de la Vida</p>
     </header>
 
-    <!-- Las otras secciones se mantienen igual (puedes copiarlas de antes) -->
-
-    <!-- SECCIÓN CIENTÍFICOS OLVIDADOS - MEJORADA -->
-    <div class="section" id="olvidado" style="background: linear-gradient(135deg, #1a0033, #000);">
-        <h2>🧠 CIENTÍFICOS OLVIDADOS</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="emoji">⚡</span>
-                <h3>Nikola Tesla</h3>
-                <p>El hombre que inventó el futuro y fue borrado de la historia oficial. Energía libre, guerra de corrientes y genialidad silenciada.</p>
-            </div>
-            <div class="card">
-                <span class="emoji">🌿</span>
-                <h3>Royal Raymond Rife</h3>
-                <p>Descubrió cómo curar el cáncer con frecuencias. Su tecnología fue destruida por intereses farmacéuticos.</p>
-            </div>
-            <div class="card">
-                <span class="emoji">🧬</span>
-                <h3>Antoine Béchamp</h3>
-                <p>El verdadero padre de la microbiología. Sus descubrimientos sobre el terreno biológico fueron reemplazados por la teoría de Pasteur.</p>
-            </div>
-            <div class="card">
-                <span class="emoji">🔬</span>
-                <h3>Wilhelm Reich</h3>
-                <p>Investigó la energía orgónica y fue perseguido hasta la muerte por sus descubrimientos.</p>
-            </div>
-        </div>
-    </div>
-
     <footer style="text-align:center; padding:80px; background:#000;">
         <p>CAZADOR – Archivo Científico Vivo © 2026</p>
-        <p>Ciencia en Defensa de la Vida</p>
     </footer>
 </body>
 </html>
