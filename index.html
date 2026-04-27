@@ -3,56 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- META TAGS PARA COMPARTIR (muy importante) -->
     <title>CAZADOR – Archivo Científico Vivo</title>
-    <meta name="description" content="Ciencia Peruana en Defensa de la Vida | Investigaciones, documentos y revelaciones del Dr. Manolo Fernández Díaz">
-    
-    <!-- Open Graph / Social Media -->
+
+    <!-- Meta para compartir -->
     <meta property="og:title" content="CAZADOR – Archivo Científico Vivo">
-    <meta property="og:description" content="La ciencia que el sistema no quiere que conozcas">
+    <meta property="og:description" content="Ciencia Peruana en Defensa de la Vida">
     <meta property="og:image" content="https://alfaterraqueo-gif.github.io/CAZADOR/portada-c.jpg">
     <meta property="og:url" content="https://alfaterraqueo-gif.github.io/CAZADOR">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="CAZADOR">
 
     <style>
         :root { --neon-pink: #ff00ff; --neon-blue: #00ffff; --dark: #0a0a0a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; background: var(--dark); color: white; scroll-behavior: smooth; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: var(--dark); 
+            color: white; 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-        nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(10,10,10,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 25px; z-index: 1000; }
-        nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; }
+        nav { 
+            position: fixed; 
+            top: 15px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: rgba(10,10,10,0.95); 
+            border: 2px solid var(--neon-pink); 
+            border-radius: 50px; 
+            padding: 12px 20px; 
+            z-index: 1000; 
+            backdrop-filter: blur(10px);
+        }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 1.05rem; }
         nav a:hover { color: var(--neon-pink); }
 
-        header { height: 100vh; background: linear-gradient(135deg, #1a0033, #000000); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        .logo { max-width: 720px; width: 100%; margin-bottom: 35px; filter: drop-shadow(0 0 60px rgba(255,0,255,0.8)); }
-        .subtitle { font-size: 2.35rem; font-weight: 800; letter-spacing: 2px; max-width: 1000px; margin-top: 10px; background: linear-gradient(90deg, #ff00ff, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header { 
+            min-height: 100vh; 
+            background: linear-gradient(135deg, #1a0033, #000000); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 20px;
+        }
 
-        .section { padding: 140px 5% 100px; max-width: 1200px; margin: 0 auto; }
-        .section h2 { font-size: 3.8rem; text-align: center; margin-bottom: 60px; background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo { max-width: 720px; width: 90%; margin-bottom: 30px; filter: drop-shadow(0 0 60px rgba(255,0,255,0.8)); }
+        .subtitle { font-size: 2.2rem; font-weight: 800; letter-spacing: 2px; max-width: 1000px; background: linear-gradient(90deg, #ff00ff, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+        .section { 
+            padding: 120px 5% 100px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .section h2 { 
+            font-size: 3.5rem; 
+            text-align: center; 
+            margin-bottom: 60px; 
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
 
-        .pdf-card { background: #111; border: 2px solid #333; border-radius: 20px; padding: 30px; text-align: center; transition: all 0.4s; }
-        .pdf-card:hover { border-color: var(--neon-pink); transform: translateY(-10px); }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 25px; 
+        }
 
+        .pdf-card, .video-card {
+            background: #111;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.4s;
+        }
         .video-card {
             height: 620px;
             background-size: cover;
             background-position: center;
-            border: 2px solid #333;
-            border-radius: 20px;
             position: relative;
             overflow: hidden;
         }
-        .video-card:hover { border-color: var(--neon-pink); transform: translateY(-15px); }
+        .video-card:hover, .pdf-card:hover { 
+            border-color: var(--neon-pink); 
+            transform: translateY(-10px); 
+        }
         .overlay {
             position: absolute;
             bottom: 0; left: 0; right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.95));
-            padding: 50px 25px 30px;
-            text-align: center;
+            padding: 40px 20px 25px;
         }
         .btn {
             margin-top: 15px;
@@ -68,8 +110,6 @@
 </head>
 <body>
 
-    <!-- El resto de tu página sigue igual (nav, header, archivo, videos...) -->
-
     <nav>
         <a href="#archivo">🧬 ARCHIVO</a>
         <a href="#adn">🧬 A.D.N.</a>
@@ -82,7 +122,17 @@
         <p class="subtitle">Plataforma científica que rastrea, preserva y revela<br>el conocimiento que el mundo ignora</p>
     </header>
 
-    <!-- ... resto de tu contenido (archivo y videos) ... -->
+    <!-- El resto de tu contenido (archivo, videos, etc.) -->
+
+    <div class="section" id="archivo">
+        <!-- Aquí va tu sección ARCHIVO -->
+    </div>
+
+    <div class="section" id="videos">
+        <!-- Aquí va tu sección VIDEOS -->
+    </div>
+
+    <!-- ... resto de secciones ... -->
 
 </body>
 </html>
