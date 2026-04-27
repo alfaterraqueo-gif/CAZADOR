@@ -72,20 +72,28 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .pdf-grid, .video-grid {
+        .intro {
+            background: #111;
+            border: 2px solid var(--neon-pink);
+            border-radius: 20px;
+            padding: 60px 50px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .pdf-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 30px;
         }
-        .card {
+        .pdf-card {
             background: #111;
             border: 2px solid #333;
             border-radius: 20px;
             padding: 30px;
+            text-align: center;
             transition: all 0.4s;
         }
-        .card:hover {
+        .pdf-card:hover {
             border-color: var(--neon-pink);
             transform: translateY(-15px);
         }
@@ -121,63 +129,36 @@
     <!-- ARCHIVO -->
     <div class="section" id="archivo">
         <h2>🧬 ARCHIVO</h2>
-        <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:50px; text-align:center; margin-bottom:60px;">
+        
+        <div class="intro">
             <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
             <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
                 Médico Veterinario, destacado científico con un Ph.D. en Biología. 
-                Especialista en producción de vacunas vivas, inactivadas y recombinantes...
+                Especialista en producción de vacunas vivas, inactivadas y recombinantes para uso agropecuario. 
+                Investigador Principal de la Universidad Nacional "San Luis Gonzaga" de Ica, 
+                Gerente General del Grupo FARVET. Profesor Extraordinario y Doctor Honoris Causa. 
+                En mérito a su excelencia académica y de investigador a lo largo de sus 20 años de experiencia 
+                como profesor en la Facultad de Medicina Veterinaria.
             </p>
         </div>
 
-        <h3 style="text-align:center; margin:40px 0;">📚 Escritos del Dr. Manolo</h3>
+        <h3 style="text-align:center; margin:50px 0 40px;">📚 Escritos del Dr. Manolo Fernández Díaz</h3>
         <div class="pdf-grid">
-            <div class="card">
+            <div class="pdf-card">
                 <p><strong>ALIANZA FARVET Y BASE2BIO</strong></p>
                 <a href="ALIANZA FARVET Y BASE2BIO.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
             </div>
-            <div class="card">
+            <div class="pdf-card">
                 <p><strong>DOS VISIONES UN SOLO VECTOR</strong></p>
                 <a href="DOS VISIONES UN SOLO VECTOR.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
             </div>
-            <div class="card">
+            <div class="pdf-card">
                 <p><strong>LA VIBRACIÓN SECRETA DE LA VIDA</strong></p>
                 <a href="LA VIBRACIÓN SECRETA DE LA VIDA.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
             </div>
-            <div class="card">
+            <div class="pdf-card">
                 <p><strong>NUTRICIÓN Y LONGEVIDAD</strong></p>
                 <a href="NUTRICIÓN Y LONGEVIDAD.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- VIDEOS -->
-    <div class="section" id="videos">
-        <h2>📹 VIDEOS</h2>
-        <div class="video-grid">
-            <div class="card">
-                <h3>La Vibración Secreta de la Verdad</h3>
-                <p>El Código Oculto del Pensamiento Fernández.</p>
-                <a href="https://www.facebook.com/reel/1329560222394383" class="btn" target="_blank">▶ Ver en Facebook</a>
-            </div>
-            <div class="card">
-                <h3>Nutrición y Longevidad</h3>
-                <p>Matusalén, los Telómeros y el Reloj Biológico.</p>
-                <a href="https://www.facebook.com/reel/1490981482359283" class="btn" target="_blank">▶ Ver en Facebook</a>
-            </div>
-            <div class="card">
-                <h3>Dos Visiones un Solo Vector Covid 19</h3>
-                <p>La batalla científica contra gobernantes incrédulos.</p>
-                <a href="https://www.facebook.com/reel/1310674777593360" class="btn" target="_blank">▶ Ver en Facebook</a>
-            </div>
-            <div class="card">
-                <h3>Protocolo de Remisión Sistémica del Cáncer</h3>
-                <p>Entender la vida… es el primer paso para defenderla.</p>
-                <a href="https://www.facebook.com/reel/1462099518751976" class="btn" target="_blank">▶ Ver en Facebook</a>
-            </div>
-            <div class="card">
-                <h3>Secuenciación del Genoma</h3>
-                <p>La Ciencia Peruana no se Detiene… Evoluciona.</p>
-                <a href="https://www.facebook.com/reel/1681471199534726" class="btn" target="_blank">▶ Ver en Facebook</a>
             </div>
         </div>
     </div>
