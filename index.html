@@ -31,7 +31,13 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
-        nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a { 
+            color: white; 
+            margin: 0 18px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: 0.3s; 
+        }
         nav a:hover { color: var(--neon-pink); }
 
         header {
@@ -51,48 +57,12 @@
             filter: drop-shadow(0 0 50px rgba(255, 0, 255, 0.7));
         }
         .subtitle {
-            font-size: 2.4rem;
+            font-size: 2.1rem;
+            max-width: 900px;
+            margin-top: 20px;
             color: #ff00ff;
             text-shadow: 0 0 25px var(--neon-pink);
-        }
-
-        .section {
-            padding: 140px 5% 100px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section h2 {
-            font-size: 3.8rem;
-            text-align: center;
-            margin-bottom: 60px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .intro {
-            background: #111;
-            border: 2px solid var(--neon-pink);
-            border-radius: 20px;
-            padding: 60px 50px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .pdf-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .pdf-card {
-            background: #111;
-            border: 2px solid #333;
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s;
-        }
-        .pdf-card:hover {
-            border-color: var(--neon-pink);
-            transform: translateY(-10px);
+            line-height: 1.3;
         }
     </style>
 </head>
@@ -107,35 +77,24 @@
 
     <header>
         <img src="LOGO.png" alt="CAZADOR" class="logo">
-        <p class="subtitle">Ciencia en Defensa de la Vida</p>
+        <p class="subtitle">
+            Plataforma científica que rastrea, preserva y revela<br>
+            el conocimiento que el mundo ignora.
+        </p>
     </header>
 
-    <!-- SECCIÓN ARCHIVO -->
-    <div class="section" id="archivo">
-        <h2>🧬 ARCHIVO</h2>
+    <!-- SECCIÓN ARCHIVO (mantengo la introducción del Dr. Manolo) -->
+    <div class="section" id="archivo" style="padding:140px 5% 100px; max-width:1200px; margin:0 auto;">
+        <h2 style="text-align:center; font-size:3.8rem; margin-bottom:60px; background:linear-gradient(90deg, #ff00ff, #00ffff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+            🧬 ARCHIVO
+        </h2>
         
-        <div class="intro">
+        <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 50px; text-align:center;">
             <h3>Dr. PhD. Manolo Fernández Díaz</h3>
-            <p style="font-size:1.3rem; max-width:900px; margin:25px auto;">
+            <p style="font-size:1.35rem; max-width:850px; margin:25px auto;">
                 Científico humanista, investigador independiente y defensor de una ciencia al servicio de la vida. 
-                Sus escritos, investigaciones y reflexiones profundas desafían los paradigmas oficiales y buscan restaurar 
-                el verdadero conocimiento humano.
+                Sus escritos desafían los paradigmas oficiales y buscan restaurar el verdadero conocimiento humano.
             </p>
-            <p style="margin-top:30px; opacity:0.9;">
-                Bienvenido al archivo vivo de su obra. Aquí se preservan y comparten sus contribuciones más importantes.
-            </p>
-        </div>
-
-        <h3 style="text-align:center; margin:50px 0 30px;">📚 Documentos Disponibles</h3>
-        <div class="pdf-grid">
-            <!-- Aquí irán tus PDFs -->
-            <div class="pdf-card">
-                <p>📄 <strong>Escrito 1</strong></p>
-                <p style="margin:15px 0;">Título del primer documento</p>
-                <a href="#" class="btn" style="background:#ff00ff; color:black; padding:10px 25px; border-radius:50px; text-decoration:none;">Descargar PDF</a>
-            </div>
-            
-            <!-- Agrega más tarjetas aquí cuando subas PDFs -->
         </div>
     </div>
 
