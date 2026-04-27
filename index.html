@@ -73,22 +73,21 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .video-grid {
+        .pdf-grid, .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 30px;
         }
-        .video-card {
+        .card {
             background: #111;
             border: 2px solid #333;
             border-radius: 20px;
             padding: 30px;
             transition: all 0.4s;
         }
-        .video-card:hover {
+        .card:hover {
             border-color: var(--neon-pink);
             transform: translateY(-15px);
-            box-shadow: 0 0 40px rgba(255,0,255,0.3);
         }
         .btn {
             margin-top: 20px;
@@ -119,41 +118,67 @@
         </p>
     </header>
 
+    <!-- ARCHIVO -->
+    <div class="section" id="archivo">
+        <h2>🧬 ARCHIVO</h2>
+        <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:50px; text-align:center; margin-bottom:60px;">
+            <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
+            <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
+                Médico Veterinario, destacado científico con un Ph.D. en Biología. 
+                Especialista en producción de vacunas vivas, inactivadas y recombinantes...
+            </p>
+        </div>
+
+        <h3 style="text-align:center; margin:40px 0;">📚 Escritos del Dr. Manolo</h3>
+        <div class="pdf-grid">
+            <div class="card">
+                <p><strong>ALIANZA FARVET Y BASE2BIO</strong></p>
+                <a href="ALIANZA FARVET Y BASE2BIO.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="card">
+                <p><strong>DOS VISIONES UN SOLO VECTOR</strong></p>
+                <a href="DOS VISIONES UN SOLO VECTOR.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="card">
+                <p><strong>LA VIBRACIÓN SECRETA DE LA VIDA</strong></p>
+                <a href="LA VIBRACIÓN SECRETA DE LA VIDA.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="card">
+                <p><strong>NUTRICIÓN Y LONGEVIDAD</strong></p>
+                <a href="NUTRICIÓN Y LONGEVIDAD.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+        </div>
+    </div>
+
     <!-- VIDEOS -->
     <div class="section" id="videos">
         <h2>📹 VIDEOS</h2>
         <div class="video-grid">
-
-            <div class="video-card">
+            <div class="card">
                 <h3>La Vibración Secreta de la Verdad</h3>
                 <p>El Código Oculto del Pensamiento Fernández.</p>
                 <a href="https://www.facebook.com/reel/1329560222394383" class="btn" target="_blank">▶ Ver en Facebook</a>
             </div>
-
-            <div class="video-card">
+            <div class="card">
                 <h3>Nutrición y Longevidad</h3>
                 <p>Matusalén, los Telómeros y el Reloj Biológico.</p>
                 <a href="https://www.facebook.com/reel/1490981482359283" class="btn" target="_blank">▶ Ver en Facebook</a>
             </div>
-
-            <div class="video-card">
+            <div class="card">
                 <h3>Dos Visiones un Solo Vector Covid 19</h3>
                 <p>La batalla científica contra gobernantes incrédulos.</p>
                 <a href="https://www.facebook.com/reel/1310674777593360" class="btn" target="_blank">▶ Ver en Facebook</a>
             </div>
-
-            <div class="video-card">
+            <div class="card">
                 <h3>Protocolo de Remisión Sistémica del Cáncer</h3>
                 <p>Entender la vida… es el primer paso para defenderla.</p>
                 <a href="https://www.facebook.com/reel/1462099518751976" class="btn" target="_blank">▶ Ver en Facebook</a>
             </div>
-
-            <div class="video-card">
+            <div class="card">
                 <h3>Secuenciación del Genoma</h3>
-                <p>La Ciencia Peruana no se Detiene… Evoluciona, pese al Nubarrón Político.</p>
+                <p>La Ciencia Peruana no se Detiene… Evoluciona.</p>
                 <a href="https://www.facebook.com/reel/1681471199534726" class="btn" target="_blank">▶ Ver en Facebook</a>
             </div>
-
         </div>
     </div>
 
