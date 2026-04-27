@@ -82,17 +82,28 @@
             background: #111;
             border: 2px solid #333;
             border-radius: 20px;
-            padding: 25px;
+            padding: 30px;
             transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-            height: 520px;
-            background-size: cover;
-            background-position: center;
+            text-align: center;
         }
         .card:hover {
             border-color: var(--neon-pink);
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+        }
+
+        /* Tarjetas para VIDEOS con imagen de fondo */
+        .video-card {
+            height: 520px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #333;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .video-card:hover {
+            border-color: var(--neon-pink);
+            transform: translateY(-15px);
         }
         .overlay {
             position: absolute;
@@ -101,7 +112,6 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.95));
             padding: 40px 25px 25px;
-            text-align: center;
         }
         .btn {
             margin-top: 15px;
@@ -135,7 +145,7 @@
     <!-- ARCHIVO -->
     <div class="section" id="archivo">
         <h2>🧬 ARCHIVO</h2>
-        <div class="intro" style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 50px; text-align:center;">
+        <div class="intro" style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 50px; text-align:center; margin-bottom:60px;">
             <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
             <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
                 Médico Veterinario, destacado científico con un Ph.D. en Biología. 
@@ -168,39 +178,39 @@
         </div>
     </div>
 
-    <!-- VIDEOS con imágenes verticales -->
+    <!-- VIDEOS -->
     <div class="section" id="videos">
         <h2>📹 VIDEOS</h2>
         <div class="grid">
-            <div class="card" style="background-image: url('video-01.jpg');">
+            <div class="video-card" style="background-image: url('video-01.jpg');">
                 <div class="overlay">
                     <h3>La Vibración Secreta de la Verdad</h3>
                     <p>El Código Oculto del Pensamiento Fernández</p>
                     <a href="https://www.facebook.com/reel/1329560222394383" class="btn" target="_blank">▶ Ver Video</a>
                 </div>
             </div>
-            <div class="card" style="background-image: url('video-02.jpg');">
+            <div class="video-card" style="background-image: url('video-02.jpg');">
                 <div class="overlay">
                     <h3>Nutrición y Longevidad</h3>
                     <p>Matusalén, los Telómeros y el Reloj Biológico</p>
                     <a href="https://www.facebook.com/reel/1490981482359283" class="btn" target="_blank">▶ Ver Video</a>
                 </div>
             </div>
-            <div class="card" style="background-image: url('video-03.jpg');">
+            <div class="video-card" style="background-image: url('video-03.jpg');">
                 <div class="overlay">
                     <h3>Dos Visiones un Solo Vector</h3>
                     <p>La batalla científica contra gobernantes incrédulos</p>
                     <a href="https://www.facebook.com/reel/1310674777593360" class="btn" target="_blank">▶ Ver Video</a>
                 </div>
             </div>
-            <div class="card" style="background-image: url('video-04.jpg');">
+            <div class="video-card" style="background-image: url('video-04.jpg');">
                 <div class="overlay">
                     <h3>Protocolo de Remisión Sistémica del Cáncer</h3>
                     <p>Entender la vida… es el primer paso para defenderla</p>
                     <a href="https://www.facebook.com/reel/1462099518751976" class="btn" target="_blank">▶ Ver Video</a>
                 </div>
             </div>
-            <div class="card" style="background-image: url('video-05.jpg');">
+            <div class="video-card" style="background-image: url('video-05.jpg');">
                 <div class="overlay">
                     <h3>Secuenciación del Genoma</h3>
                     <p>La Ciencia Peruana no se Detiene… Evoluciona</p>
