@@ -5,23 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAZADOR – Archivo Científico Vivo</title>
     <style>
-        :root { --neon-pink: #ff00ff; --neon-blue: #00ffff; --dark: #0a0a0a; }
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --dark: #0a0a0a;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; background: var(--dark); color: white; scroll-behavior: smooth; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--dark);
+            color: white;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-        nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(10,10,10,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 25px; z-index: 1000; }
-        nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; }
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10,10,10,0.95);
+            border: 2px solid var(--neon-pink);
+            border-radius: 50px;
+            padding: 12px 25px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; transition: 0.3s; }
         nav a:hover { color: var(--neon-pink); }
 
-        header { height: 100vh; background: linear-gradient(135deg, #1a0033, #000000); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        .logo { max-width: 720px; width: 100%; margin-bottom: 35px; filter: drop-shadow(0 0 60px rgba(255,0,255,0.8)); }
-        .subtitle { font-size: 2.35rem; font-weight: 800; letter-spacing: 2px; max-width: 1000px; margin-top: 10px; background: linear-gradient(90deg, #ff00ff, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header {
+            height: 100vh;
+            background: linear-gradient(135deg, #1a0033, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            max-width: 720px;
+            width: 100%;
+            margin-bottom: 35px;
+            filter: drop-shadow(0 0 60px rgba(255, 0, 255, 0.8));
+        }
+        .subtitle {
+            font-size: 2.35rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            max-width: 1000px;
+            margin-top: 10px;
+            background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
+            line-height: 1.25;
+        }
 
         .section { padding: 140px 5% 100px; max-width: 1200px; margin: 0 auto; }
-        .section h2 { font-size: 3.8rem; text-align: center; margin-bottom: 60px; background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section h2 {
+            font-size: 3.8rem;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+        }
 
+        /* PDF Cards */
+        .pdf-card {
+            background: #111;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+        .pdf-card:hover {
+            border-color: var(--neon-pink);
+            transform: translateY(-10px);
+        }
+
+        /* Video Cards with background image */
         .video-card {
             height: 520px;
             background-size: cover;
@@ -31,11 +103,18 @@
             position: relative;
             overflow: hidden;
         }
+        .video-card:hover {
+            border-color: var(--neon-pink);
+            transform: translateY(-10px);
+        }
         .overlay {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.95));
             padding: 40px 25px 25px;
+            text-align: center;
         }
         .btn {
             margin-top: 15px;
@@ -60,8 +139,47 @@
 
     <header>
         <img src="LOGO.png" alt="CAZADOR" class="logo">
-        <p class="subtitle">Plataforma científica que rastrea, preserva y revela<br>el conocimiento que el mundo ignora</p>
+        <p class="subtitle">
+            Plataforma científica que rastrea, preserva y revela<br>
+            el conocimiento que el mundo ignora
+        </p>
     </header>
+
+    <!-- ARCHIVO -->
+    <div class="section" id="archivo">
+        <h2>🧬 ARCHIVO</h2>
+        <div class="intro" style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 50px; text-align:center; margin-bottom:60px;">
+            <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
+            <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
+                Médico Veterinario, destacado científico con un Ph.D. en Biología. 
+                Especialista en producción de vacunas vivas, inactivadas y recombinantes para uso agropecuario. 
+                Investigador Principal de la Universidad Nacional "San Luis Gonzaga" de Ica, 
+                Gerente General del Grupo FARVET. Profesor Extraordinario y Doctor Honoris Causa. 
+                En mérito a su excelencia académica y de investigador a lo largo de sus 20 años de experiencia 
+                como profesor en la Facultad de Medicina Veterinaria.
+            </p>
+        </div>
+
+        <h3 style="text-align:center; margin:50px 0 40px;">📚 Escritos del Dr. Manolo Fernández Díaz</h3>
+        <div class="grid">
+            <div class="pdf-card">
+                <p><strong>ALIANZA FARVET Y BASE2BIO</strong></p>
+                <a href="ALIANZA FARVET Y BASE2BIO.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="pdf-card">
+                <p><strong>DOS VISIONES UN SOLO VECTOR</strong></p>
+                <a href="DOS VISIONES UN SOLO VECTOR.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="pdf-card">
+                <p><strong>LA VIBRACIÓN SECRETA DE LA VIDA</strong></p>
+                <a href="LA VIBRACIÓN SECRETA DE LA VIDA.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="pdf-card">
+                <p><strong>NUTRICIÓN Y LONGEVIDAD</strong></p>
+                <a href="NUTRICIÓN Y LONGEVIDAD.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+        </div>
+    </div>
 
     <!-- VIDEOS -->
     <div class="section" id="videos">
@@ -105,5 +223,8 @@
         </div>
     </div>
 
+    <footer style="text-align:center; padding:100px; background:#000;">
+        <p>CAZADOR – Archivo Científico Vivo © 2026</p>
+    </footer>
 </body>
 </html>
