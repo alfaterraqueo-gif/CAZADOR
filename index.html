@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- META TAGS PARA COMPARTIR (muy importante) -->
     <title>CAZADOR – Archivo Científico Vivo</title>
+    <meta name="description" content="Ciencia Peruana en Defensa de la Vida | Investigaciones, documentos y revelaciones del Dr. Manolo Fernández Díaz">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="CAZADOR – Archivo Científico Vivo">
+    <meta property="og:description" content="La ciencia que el sistema no quiere que conozcas">
+    <meta property="og:image" content="https://alfaterraqueo-gif.github.io/CAZADOR/portada-c.jpg">
+    <meta property="og:url" content="https://alfaterraqueo-gif.github.io/CAZADOR">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CAZADOR">
+
     <style>
         :root { --neon-pink: #ff00ff; --neon-blue: #00ffff; --dark: #0a0a0a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +38,7 @@
         .pdf-card:hover { border-color: var(--neon-pink); transform: translateY(-10px); }
 
         .video-card {
-            height: 520px;
+            height: 620px;
             background-size: cover;
             background-position: center;
             border: 2px solid #333;
@@ -34,12 +46,13 @@
             position: relative;
             overflow: hidden;
         }
-        .video-card:hover { border-color: var(--neon-pink); transform: translateY(-10px); }
+        .video-card:hover { border-color: var(--neon-pink); transform: translateY(-15px); }
         .overlay {
             position: absolute;
             bottom: 0; left: 0; right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.95));
-            padding: 40px 25px 25px;
+            padding: 50px 25px 30px;
+            text-align: center;
         }
         .btn {
             margin-top: 15px;
@@ -55,6 +68,8 @@
 </head>
 <body>
 
+    <!-- El resto de tu página sigue igual (nav, header, archivo, videos...) -->
+
     <nav>
         <a href="#archivo">🧬 ARCHIVO</a>
         <a href="#adn">🧬 A.D.N.</a>
@@ -67,87 +82,7 @@
         <p class="subtitle">Plataforma científica que rastrea, preserva y revela<br>el conocimiento que el mundo ignora</p>
     </header>
 
-    <!-- ARCHIVO -->
-    <div class="section" id="archivo">
-        <h2>🧬 ARCHIVO</h2>
-        <!-- CV y PDFs se mantienen iguales -->
-        <div class="intro" style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 50px; text-align:center; margin-bottom:60px;">
-            <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
-            <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
-                Médico Veterinario, destacado científico con un Ph.D. en Biología. 
-                Especialista en producción de vacunas vivas, inactivadas y recombinantes para uso agropecuario. 
-                Investigador Principal de la Universidad Nacional "San Luis Gonzaga" de Ica, 
-                Gerente General del Grupo FARVET. Profesor Extraordinario y Doctor Honoris Causa. 
-                En mérito a su excelencia académica y de investigador a lo largo de sus 20 años de experiencia 
-                como profesor en la Facultad de Medicina Veterinaria.
-            </p>
-        </div>
+    <!-- ... resto de tu contenido (archivo y videos) ... -->
 
-        <h3 style="text-align:center; margin:50px 0 40px;">📚 Escritos del Dr. Manolo Fernández Díaz</h3>
-        <div class="grid">
-            <div class="pdf-card">
-                <p><strong>ALIANZA FARVET Y BASE2BIO</strong></p>
-                <a href="ALIANZA FARVET Y BASE2BIO.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-            <div class="pdf-card">
-                <p><strong>DOS VISIONES UN SOLO VECTOR</strong></p>
-                <a href="DOS VISIONES UN SOLO VECTOR.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-            <div class="pdf-card">
-                <p><strong>LA VIBRACIÓN SECRETA DE LA VIDA</strong></p>
-                <a href="la-vibracion-secreta-de-la-vida.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-            <div class="pdf-card">
-                <p><strong>NUTRICIÓN Y LONGEVIDAD</strong></p>
-                <a href="nutricion-y-longevidad.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- VIDEOS -->
-    <div class="section" id="videos">
-        <h2>📹 VIDEOS</h2>
-        <div class="grid">
-            <div class="video-card" style="background-image: url('ChatGPT Image 27 mar 2026, 13_13_25.png');">
-                <div class="overlay">
-                    <h3>La Vibración Secreta de la Verdad</h3>
-                    <p>El Código Oculto del Pensamiento Fernández</p>
-                    <a href="https://www.facebook.com/reel/1329560222394383" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video02.jpg');">
-                <div class="overlay">
-                    <h3>Nutrición y Longevidad</h3>
-                    <p>Matusalén, los Telómeros y el Reloj Biológico</p>
-                    <a href="https://www.facebook.com/reel/1490981482359283" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-03.jpg.jpg');">
-                <div class="overlay">
-                    <h3>Dos Visiones un Solo Vector</h3>
-                    <p>La batalla científica contra gobernantes incrédulos</p>
-                    <a href="https://www.facebook.com/reel/1310674777593360" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-04.jpg.png');">
-                <div class="overlay">
-                    <h3>Protocolo de Remisión Sistémica del Cáncer</h3>
-                    <p>Entender la vida… es el primer paso para defenderla</p>
-                    <a href="https://www.facebook.com/reel/1462099518751976" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-05.jpg.png');">
-                <div class="overlay">
-                    <h3>Secuenciación del Genoma</h3>
-                    <p>La Ciencia Peruana no se Detiene… Evoluciona</p>
-                    <a href="https://www.facebook.com/reel/1681471199534726" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer style="text-align:center; padding:100px; background:#000;">
-        <p>CAZADOR – Archivo Científico Vivo © 2026</p>
-    </footer>
 </body>
 </html>
