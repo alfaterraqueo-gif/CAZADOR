@@ -16,8 +16,10 @@
             background: var(--dark);
             color: white;
             line-height: 1.6;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
+
+        /* HEADER */
         header {
             height: 100vh;
             background: linear-gradient(135deg, #1a0033, #000000);
@@ -28,23 +30,52 @@
             position: relative;
         }
         h1 {
-            font-size: 6rem;
+            font-size: 7rem;
             background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 40px var(--neon-pink);
+            text-shadow: 0 0 60px var(--neon-pink);
         }
-        .subtitle {
-            font-size: 1.8rem;
-            margin: 20px 0;
-            opacity: 0.9;
+        .subtitle { font-size: 2rem; margin: 20px 0; opacity: 0.9; }
+
+        /* NAV FLOTANTE */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10,10,10,0.95);
+            border: 2px solid var(--neon-pink);
+            border-radius: 50px;
+            padding: 12px 30px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
-        .sections {
-            padding: 100px 5%;
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        nav a:hover { color: var(--neon-pink); }
+
+        /* SECCIONES */
+        .section {
+            padding: 120px 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
-        .section-grid {
+        .section h2 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 30px;
@@ -52,114 +83,113 @@
         .card {
             background: #111;
             border: 2px solid #333;
-            border-radius: 16px;
-            padding: 35px 25px;
+            border-radius: 20px;
+            padding: 40px 30px;
             transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
         }
         .card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-20px) scale(1.03);
             border-color: var(--neon-pink);
-            box-shadow: 0 0 40px rgba(255, 0, 255, 0.3);
+            box-shadow: 0 0 50px rgba(255,0,255,0.4);
         }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 40%;
-            height: 40%;
-            background: radial-gradient(circle, rgba(255,0,255,0.2) 0%, transparent 70%);
-            opacity: 0;
-            transition: all 0.4s;
+        .emoji { font-size: 4rem; margin-bottom: 20px; }
+
+        .content {
+            padding: 40px;
+            background: #0f0f0f;
+            border-radius: 16px;
+            margin-top: 30px;
         }
-        .card:hover::before {
-            opacity: 1;
-            top: -20%;
-            left: -20%;
-        }
-        .emoji {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        .card h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: var(--neon-pink);
-        }
+
         .btn {
             margin-top: 25px;
-            padding: 14px 40px;
+            padding: 16px 45px;
             background: transparent;
             border: 2px solid var(--neon-pink);
             color: white;
             font-size: 1.1rem;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.4s;
         }
         .btn:hover {
             background: var(--neon-pink);
-            transform: scale(1.05);
+            color: black;
+            transform: scale(1.1);
         }
+
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: #000;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
+
+    <!-- NAV FLOTANTE -->
+    <nav>
+        <a href="#en-la-mira">EN LA MIRA</a>
+        <a href="#archivo">ARCHIVO</a>
+        <a href="#revelaciones">REVELACIONES</a>
+        <a href="#ciencia">CIENCIA</a>
+        <a href="#operaciones">OPERACIONES</a>
+    </nav>
+
     <header>
         <div>
             <h1>CAZADOR</h1>
-            <p class="subtitle">La verdad no se pide permiso</p>
-            <a href="#secciones" class="btn" style="display:inline-block; margin-top:30px;">COMENZAR LA CAZA</a>
+            <p class="subtitle">La verdad no pide permiso</p>
         </div>
     </header>
 
-    <div class="sections" id="secciones">
-        <h2 style="text-align:center; font-size:3rem; margin-bottom:60px; color:#fff;">
-            ELIGE TU MISIÓN
-        </h2>
-        
-        <div class="section-grid">
+    <!-- SECCIÓN 1 -->
+    <div class="section" id="en-la-mira">
+        <h2>🎯 EN LA MIRA</h2>
+        <div class="grid">
             <div class="card">
-                <span class="emoji">🎯</span>
-                <h2>EN LA MIRA</h2>
-                <p>Denuncias fuertes, temas calientes y todo lo que está pasando ahora mismo. Lo que los medios no quieren mostrar.</p>
-                <button class="btn">VER DENUNCIAS ACTIVAS →</button>
+                <h3>Denuncia caliente del día</h3>
+                <p>Contenido explosivo que los medios tradicionales ocultan...</p>
+                <button class="btn">LEER DENUNCIA →</button>
             </div>
+        </div>
+    </div>
 
-            <div class="card">
-                <span class="emoji">🧬</span>
-                <h2>ARCHIVO CAZADOR</h2>
-                <p>Documentos, expedientes y material del Dr. Manolo. El archivo que nadie quiere que veas.</p>
-                <button class="btn">ENTRAR AL ARCHIVO →</button>
-            </div>
+    <!-- SECCIÓN 2 -->
+    <div class="section" id="archivo">
+        <h2>🧬 ARCHIVO CAZADOR</h2>
+        <div class="content">
+            <h3>Documentos del Dr. Manolo</h3>
+            <p>Aquí se guardan expedientes, audios, PDFs y pruebas que nadie quiere que veas.</p>
+            <button class="btn">ACCEDER AL ARCHIVO COMPLETO →</button>
+        </div>
+    </div>
 
-            <div class="card">
-                <span class="emoji">⚡</span>
-                <h2>REVELACIONES</h2>
-                <p>Investigaciones propias, filtraciones y verdades que hemos descubierto nosotros.</p>
-                <button class="btn">ÚLTIMAS REVELACIONES →</button>
-            </div>
+    <!-- SECCIÓN 3 -->
+    <div class="section" id="revelaciones">
+        <h2>⚡ REVELACIONES</h2>
+        <div class="grid">
+            <div class="card"><p>Investigación propia #47</p></div>
+            <div class="card"><p>La filtración que nadie vio venir</p></div>
+        </div>
+    </div>
 
-            <div class="card">
-                <span class="emoji">🚀</span>
-                <h2>CIENCIA SIN FILTRO</h2>
-                <p>Explicaciones directas, sin censura ni corrección política. Ciencia cruda.</p>
-                <button class="btn">EXPLORAR CIENCIA →</button>
-            </div>
+    <!-- SECCIÓN 4 -->
+    <div class="section" id="ciencia">
+        <h2>🚀 CIENCIA SIN FILTRO</h2>
+        <div class="content">
+            <p>Explicaciones crudas, sin corrección política ni censura académica.</p>
+        </div>
+    </div>
 
+    <!-- SECCIÓN 5 -->
+    <div class="section" id="operaciones">
+        <h2>🔍 OPERACIONES</h2>
+        <div class="grid">
             <div class="card">
-                <span class="emoji">🔍</span>
-                <h2>OPERACIONES</h2>
-                <p>Análisis profundos, expedientes completos y operaciones de investigación en curso.</p>
-                <button class="btn">VER OPERACIONES →</button>
+                <h3>Expediente Activo</h3>
+                <p>Análisis profundo en curso...</p>
             </div>
         </div>
     </div>
