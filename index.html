@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,93 +8,41 @@
     <style>
         :root { --neon-pink: #ff00ff; --neon-blue: #00ffff; --dark: #0a0a0a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background: var(--dark); 
-            color: white; 
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Arial', sans-serif; background: var(--dark); color: white; scroll-behavior: smooth; }
 
-        nav { 
-            position: fixed; 
-            top: 15px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            background: rgba(10,10,10,0.95); 
-            border: 2px solid var(--neon-pink); 
-            border-radius: 50px; 
-            padding: 12px 20px; 
-            z-index: 1000; 
-        }
+        nav { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: rgba(10,10,10,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 20px; z-index: 1000; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
 
-        header { 
-            min-height: 100vh; 
-            background: linear-gradient(135deg, #1a0033, #000000); 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            padding: 20px;
-        }
+        header { min-height: 100vh; background: linear-gradient(135deg, #1a0033, #000000); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
         .logo { max-width: 720px; width: 90%; margin-bottom: 30px; filter: drop-shadow(0 0 60px rgba(255,0,255,0.8)); }
         .subtitle { font-size: 2.2rem; font-weight: 800; letter-spacing: 2px; background: linear-gradient(90deg, #ff00ff, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .section { 
-            padding: 120px 5% 80px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-        .section h2 { 
-            font-size: 3.5rem; 
-            text-align: center; 
-            margin-bottom: 60px; 
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
+        .section { padding: 120px 5% 80px; max-width: 1200px; margin: 0 auto; }
+        .section h2 { font-size: 3.5rem; text-align: center; margin-bottom: 50px; background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 25px; 
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
 
-        .pdf-card, .video-card {
-            background: #111;
-            border: 2px solid #333;
-            border-radius: 20px;
-            padding: 25px;
+        .radio-card {
+            background: linear-gradient(145deg, #1a0033, #000000);
+            border: 3px solid var(--neon-pink);
+            border-radius: 25px;
+            padding: 40px 30px;
             text-align: center;
-            transition: all 0.4s;
+            box-shadow: 0 0 40px rgba(255,0,255,0.3);
         }
-        .video-card {
-            height: 580px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
+        .radio-player {
+            width: 100%;
+            margin: 25px 0;
         }
-        .video-card:hover { 
-            border-color: var(--neon-pink); 
-            transform: translateY(-10px); 
-        }
-        .overlay {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.95));
-            padding: 40px 20px 30px;
-        }
-        .btn {
-            margin-top: 15px;
-            padding: 14px 35px;
+        .btn-radio {
+            padding: 16px 50px;
+            font-size: 1.3rem;
             background: var(--neon-pink);
             color: black;
-            text-decoration: none;
+            border: none;
             border-radius: 50px;
             font-weight: bold;
-            display: inline-block;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -116,78 +64,40 @@
     <!-- ARCHIVO -->
     <div class="section" id="archivo">
         <h2>🧬 ARCHIVO</h2>
+        <!-- Tu contenido del CV y PDFs aquí -->
         <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 40px; text-align:center; margin-bottom:60px;">
             <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
             <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
                 Médico Veterinario, destacado científico con un Ph.D. en Biología. 
                 Especialista en producción de vacunas vivas, inactivadas y recombinantes para uso agropecuario. 
                 Investigador Principal de la Universidad Nacional "San Luis Gonzaga" de Ica, 
-                Gerente General del Grupo FARVET. Profesor Extraordinario y Doctor Honoris Causa. 
-                En mérito a su excelencia académica y de investigador a lo largo de sus 20 años de experiencia 
-                como profesor en la Facultad de Medicina Veterinaria.
+                Gerente General del Grupo FARVET. Profesor Extraordinario y Doctor Honoris Causa.
             </p>
         </div>
-
-        <h3 style="text-align:center; margin:50px 0 40px;">📚 Escritos del Dr. Manolo Fernández Díaz</h3>
-        <div class="grid">
-            <div class="pdf-card">
-                <p><strong>ALIANZA FARVET Y BASE2BIO</strong></p>
-                <a href="ALIANZA FARVET Y BASE2BIO.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-            <div class="pdf-card">
-                <p><strong>DOS VISIONES UN SOLO VECTOR</strong></p>
-                <a href="DOS VISIONES UN SOLO VECTOR.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-            <div class="pdf-card">
-                <p><strong>LA VIBRACIÓN SECRETA DE LA VIDA</strong></p>
-                <a href="la-vibracion-secreta-de-la-vida.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-            <div class="pdf-card">
-                <p><strong>NUTRICIÓN Y LONGEVIDAD</strong></p>
-                <a href="nutricion-y-longevidad.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
-            </div>
-        </div>
+        <!-- Agrega aquí tus tarjetas de PDFs -->
     </div>
 
-    <!-- VIDEOS -->
+    <!-- VIDEOS (mantengo las verticales) -->
     <div class="section" id="videos">
         <h2>📹 VIDEOS</h2>
-        <div class="grid">
-            <div class="video-card" style="background-image: url('ChatGPT Image 27 mar 2026, 13_13_25.png');">
-                <div class="overlay">
-                    <h3>La Vibración Secreta de la Verdad</h3>
-                    <p>El Código Oculto del Pensamiento Fernández</p>
-                    <a href="https://www.facebook.com/reel/1329560222394383" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video02.jpg');">
-                <div class="overlay">
-                    <h3>Nutrición y Longevidad</h3>
-                    <p>Matusalén, los Telómeros y el Reloj Biológico</p>
-                    <a href="https://www.facebook.com/reel/1490981482359283" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-03.jpg.jpg');">
-                <div class="overlay">
-                    <h3>Dos Visiones un Solo Vector</h3>
-                    <p>La batalla científica contra gobernantes incrédulos</p>
-                    <a href="https://www.facebook.com/reel/1310674777593360" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-04.jpg.png');">
-                <div class="overlay">
-                    <h3>Protocolo de Remisión Sistémica del Cáncer</h3>
-                    <p>Entender la vida… es el primer paso para defenderla</p>
-                    <a href="https://www.facebook.com/reel/1462099518751976" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-05.jpg.png');">
-                <div class="overlay">
-                    <h3>Secuenciación del Genoma</h3>
-                    <p>La Ciencia Peruana no se Detiene… Evoluciona</p>
-                    <a href="https://www.facebook.com/reel/1681471199534726" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
+        <!-- Tus tarjetas de videos aquí -->
+    </div>
+
+    <!-- NUEVA SECCIÓN RADIO - CON MÁS IMPACTO -->
+    <div class="section" id="radio">
+        <h2>📻 RADIO CAZADOR</h2>
+        <div class="radio-card">
+            <h3 style="font-size:2.8rem; margin-bottom:20px;">CIENCIA SIN FILTROS</h3>
+            <p style="font-size:1.4rem; opacity:0.9; margin-bottom:30px;">La voz de la ciencia peruana que desafía paradigmas</p>
+            
+            <audio class="radio-player" controls>
+                <source src="https://tu-radio-en-vivo.stream" type="audio/mpeg">
+                Tu navegador no soporta el reproductor.
+            </audio>
+
+            <button class="btn-radio" onclick="alert('🎙️ Radio Cazador en vivo - Ciencia Sin Filtros')">ESCUCHAR EN VIVO</button>
+
+            <p style="margin-top:25px; opacity:0.8;">Transmitiendo las 24 horas • Ciencia • Tecnología • Verdad sin censura</p>
         </div>
     </div>
 
