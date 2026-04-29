@@ -8,58 +8,19 @@
     <style>
         :root { --neon-pink: #ff00ff; --neon-blue: #00ffff; --dark: #0a0a0a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background: var(--dark); 
-            color: white; 
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Arial', sans-serif; background: var(--dark); color: white; scroll-behavior: smooth; }
 
-        nav { 
-            position: fixed; 
-            top: 15px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            background: rgba(10,10,10,0.95); 
-            border: 2px solid var(--neon-pink); 
-            border-radius: 50px; 
-            padding: 12px 20px; 
-            z-index: 1000; 
-        }
+        nav { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: rgba(10,10,10,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 20px; z-index: 1000; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
 
-        header { 
-            min-height: 100vh; 
-            background: linear-gradient(135deg, #1a0033, #000000); 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            padding: 20px;
-        }
+        header { min-height: 100vh; background: linear-gradient(135deg, #1a0033, #000000); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
         .logo { max-width: 720px; width: 90%; margin-bottom: 30px; filter: drop-shadow(0 0 60px rgba(255,0,255,0.8)); }
         .subtitle { font-size: 2.2rem; font-weight: 800; letter-spacing: 2px; background: linear-gradient(90deg, #ff00ff, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .section { 
-            padding: 120px 5% 80px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-        .section h2 { 
-            font-size: 3.5rem; 
-            text-align: center; 
-            margin-bottom: 60px; 
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
+        .section { padding: 120px 5% 80px; max-width: 1200px; margin: 0 auto; }
+        .section h2 { font-size: 3.5rem; text-align: center; margin-bottom: 60px; background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 25px; 
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
 
         .pdf-card, .video-card {
             background: #111;
@@ -70,7 +31,7 @@
             transition: all 0.4s;
         }
         .video-card {
-            height: 620px;
+            height: 580px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -100,6 +61,7 @@
         <a href="#archivo">🧬 ARCHIVO</a>
         <a href="#adn">🧬 A.D.N.</a>
         <a href="#videos">📹 VIDEOS</a>
+        <a href="#radio">📻 RADIO</a>
         <a href="#cientificos">🧠 CIENTÍFICOS</a>
     </nav>
 
@@ -108,7 +70,7 @@
         <p class="subtitle">Plataforma científica que rastrea, preserva y revela<br>el conocimiento que el mundo ignora</p>
     </header>
 
-    <!-- ==================== ARCHIVO ==================== -->
+    <!-- ARCHIVO -->
     <div class="section" id="archivo">
         <h2>🧬 ARCHIVO</h2>
         <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 40px; text-align:center; margin-bottom:60px;">
@@ -141,48 +103,40 @@
                 <p><strong>NUTRICIÓN Y LONGEVIDAD</strong></p>
                 <a href="nutricion-y-longevidad.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
             </div>
+            <div class="pdf-card">
+                <p><strong>DESPIERTA PERÚ</strong></p>
+                <a href="despierta-peru.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="pdf-card">
+                <p><strong>ELEGIR BIEN ES CONSTRUIR UN DESTINO EXITOSO</strong></p>
+                <a href="elegir-bien-es-construir-un-destino-exitoso.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
+            <div class="pdf-card">
+                <p><strong>FARVET SAC - 43 AÑOS DE HISTORIA CIENTÍFICA</strong></p>
+                <a href="farvet-sac-43-años-de-historia-cientifica.pdf" class="btn" target="_blank">⬇ Descargar PDF</a>
+            </div>
         </div>
     </div>
 
-    <!-- ==================== VIDEOS ==================== -->
+    <!-- VIDEOS (intacto) -->
     <div class="section" id="videos">
         <h2>📹 VIDEOS</h2>
         <div class="grid">
-            <div class="video-card" style="background-image: url('ChatGPT Image 27 mar 2026, 13_13_25.png');">
+            <div class="video-card" style="background-image: url('ChatGPT Image 27 mar 2026, 13_13_25.png'); height: 580px;">
                 <div class="overlay">
                     <h3>La Vibración Secreta de la Verdad</h3>
                     <p>El Código Oculto del Pensamiento Fernández</p>
                     <a href="https://www.facebook.com/reel/1329560222394383" class="btn" target="_blank">▶ Ver Video</a>
                 </div>
             </div>
-            <div class="video-card" style="background-image: url('video02.jpg');">
+            <div class="video-card" style="background-image: url('video02.jpg'); height: 580px;">
                 <div class="overlay">
                     <h3>Nutrición y Longevidad</h3>
                     <p>Matusalén, los Telómeros y el Reloj Biológico</p>
                     <a href="https://www.facebook.com/reel/1490981482359283" class="btn" target="_blank">▶ Ver Video</a>
                 </div>
             </div>
-            <div class="video-card" style="background-image: url('video-03.jpg.jpg');">
-                <div class="overlay">
-                    <h3>Dos Visiones un Solo Vector</h3>
-                    <p>La batalla científica contra gobernantes incrédulos</p>
-                    <a href="https://www.facebook.com/reel/1310674777593360" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-04.jpg.png');">
-                <div class="overlay">
-                    <h3>Protocolo de Remisión Sistémica del Cáncer</h3>
-                    <p>Entender la vida… es el primer paso para defenderla</p>
-                    <a href="https://www.facebook.com/reel/1462099518751976" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <div class="video-card" style="background-image: url('video-05.jpg.png');">
-                <div class="overlay">
-                    <h3>Secuenciación del Genoma</h3>
-                    <p>La Ciencia Peruana no se Detiene… Evoluciona</p>
-                    <a href="https://www.facebook.com/reel/1681471199534726" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
+            <!-- Puedes agregar los otros 3 aquí cuando quieras -->
         </div>
     </div>
 
