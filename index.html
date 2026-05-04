@@ -4,7 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAZADOR – Archivo Científico Vivo</title>
+        /* === ANIMACIONES AVANZADAS === */
+        @keyframes neonPulse {
+            0% { text-shadow: 0 0 10px #00ffff; }
+            50% { text-shadow: 0 0 40px #00ffff, 0 0 60px #ff00ff; }
+            100% { text-shadow: 0 0 10px #00ffff; }
+        }
 
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .audio-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .audio-item:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 0 45px rgba(0, 255, 255, 0.5);
+            border-color: #ff00ff;
+        }
     <style>
         :root { --neon-pink: #ff00ff; --neon-blue: #00ffff; --dark: #0a0a0a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
