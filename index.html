@@ -9,15 +9,16 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Arial', sans-serif; background: #0a001f; color: white; scroll-behavior: smooth; }
 
-        nav { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: rgba(10,10,30,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 25px; z-index: 1000; box-shadow: 0 0 30px rgba(0,255,255,0.4); }
+        nav { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: rgba(10,10,30,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 25px; z-index: 1000; }
         nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; }
 
         header { min-height: 100vh; background: linear-gradient(rgba(5,0,25,0.85), rgba(0,10,40,0.9)), url('https://images.unsplash.com/photo-1462331940025-5ec7f0e9d0e4?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
 
-        .logo { max-width: 720px; width: 80%; margin-bottom: 40px; filter: drop-shadow(0 0 70px rgba(0,255,255,0.85)); }
+        .logo { max-width: 720px; width: 80%; margin-bottom: 30px; filter: drop-shadow(0 0 60px rgba(0,255,255,0.8)); }
+
         .subtitle { font-size: 2.4rem; font-weight: 900; letter-spacing: 3px; background: linear-gradient(90deg, #00ffff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,255,255,0.8); }
 
-        .section { padding: 120px 5% 80px; max-width: 1200px; margin: 40px auto; background: linear-gradient(135deg, rgba(10,5,40,0.95), rgba(0,20,60,0.95)); border: 1px solid rgba(0,255,255,0.3); border-radius: 20px; box-shadow: 0 0 40px rgba(0,255,255,0.15); }
+        .section { padding: 120px 5% 80px; max-width: 1200px; margin: 40px auto; background: rgba(10,5,40,0.95); border: 1px solid rgba(0,255,255,0.3); border-radius: 20px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
 
@@ -64,15 +65,23 @@
 
     <header>
         <img src="LOGO.png" alt="CAZADOR" class="logo">
-        <img src="MANOLO10.jpeg" alt="Dr. Manolo" style="max-width: 360px; width: 65%; border-radius: 50%; border: 5px solid rgba(0,255,255,0.7); box-shadow: 0 0 60px rgba(0,255,255,0.8); margin: 30px 0;">
+        <img src="MANOLO10.jpeg" alt="Dr. Manolo" style="max-width: 360px; width: 65%; border-radius: 50%; border: 5px solid rgba(0,255,255,0.7); margin: 30px 0;">
         <p class="subtitle">PLATAFORMA CIENTÍFICA QUE RASTREA, PRESERVA Y REVELA<br>EL CONOCIMIENTO QUE EL MUNDO IGNORA</p>
     </header>
 
     <!-- ARCHIVO -->
     <div class="section" id="archivo">
         <h2>🧬 ARCHIVO</h2>
-        <!-- Aquí va tu contenido de PDFs -->
-        <p style="text-align:center; font-size:1.3rem;">Contenido de Archivos (PDFs)...</p>
+        <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 40px; text-align:center; margin-bottom:60px;">
+            <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
+            <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
+                Médico Veterinario, destacado científico con un Ph.D. en Biología. Especialista en producción de vacunas vivas, inactivadas y recombinantes. Investigador Principal de la Universidad Nacional "San Luis Gonzaga" de Ica, Gerente General del Grupo FARVET.
+            </p>
+        </div>
+        <div class="grid">
+            <!-- Tus PDFs aquí -->
+            <p style="text-align:center; grid-column: 1 / -1;">Tus PDFs cargados...</p>
+        </div>
     </div>
 
     <!-- VIDEOS -->
@@ -80,7 +89,7 @@
         <h2>📹 VIDEOS</h2>
         <div class="grid">
             <!-- Tus 8 videos aquí -->
-            <p style="text-align:center;">Tus videos cargados...</p>
+            <p style="text-align:center; grid-column: 1 / -1;">Tus videos cargados...</p>
         </div>
     </div>
 
@@ -88,7 +97,7 @@
     <div class="section" id="radio">
         <h2>📻 RADIO CAZADOR</h2>
         <div style="text-align:center;">
-            <p>Primer Audio y demás audios aquí...</p>
+            <p>Radio con tus audios...</p>
         </div>
     </div>
 
