@@ -12,9 +12,116 @@
         nav { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: rgba(10,10,30,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 25px; z-index: 1000; box-shadow: 0 0 30px rgba(0,255,255,0.4); }
         nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; }
 
-            <!-- HEADER CINEMATOGRÁFICO MEJORADO -->
+        header { min-height: 100vh; background: linear-gradient(rgba(5,0,25,0.85), rgba(0,10,40,0.9)), url('https://images.unsplash.com/photo-1462331940025-5ec7f0e9d0e4?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+
+        .logo { max-width: 720px; width: 80%; margin-bottom: 30px; filter: drop-shadow(0 0 60px rgba(0,255,255,0.8)); }
+
+        .subtitle { font-size: 2.4rem; font-weight: 900; letter-spacing: 3px; background: linear-gradient(90deg, #00ffff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,255,255,0.8); }
+
+        .section { padding: 120px 5% 80px; max-width: 1200px; margin: 40px auto; background: rgba(10,5,40,0.95); border: 1px solid rgba(0,255,255,0.3); border-radius: 20px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
+
+            .pdf-card, .video-card {
+            background: rgba(15, 8, 50, 0.85);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdf-card::before, .video-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: all 0.6s;
+        }
+
+        .pdf-card:hover::before, .video-card:hover::before {
+            opacity: 1;
+            transform: rotate(30deg);
+        }
+
+        .pdf-card:hover, .video-card:hover {
+            transform: translateY(-18px) scale(1.04);
+            border-color: #ff00ff;
+            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.4);
+        }
+
+        .video-card {
+            height: 520px;
+            background-size: cover;
+            background-position: center;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.95));
+            padding: 40px 20px 30px;
+        }
+        .btn {
+            margin-top: 15px;
+            padding: 14px 35px;
+            background: var(--neon-pink);
+            color: black;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+        }
+                /* === ANIMACIONES PARA DAR VIDA === */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes neonGlow {
+            0% { text-shadow: 0 0 10px #00ffff; }
+            50% { text-shadow: 0 0 40px #00ffff, 0 0 60px #ff00ff; }
+            100% { text-shadow: 0 0 10px #00ffff; }
+        }
+
+        .section { animation: fadeInUp 0.8s ease forwards; }
+
+        .video-card, .pdf-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .video-card:hover, .pdf-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+            border-color: #ff00ff;
+        }
+
+        h2 { animation: neonGlow 4s infinite alternate; }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#archivo">🧬 ARCHIVO</a>
+        <a href="#videos">📹 VIDEOS</a>
+        <a href="#radio">📻 RADIO</a>
+    </nav>
+
+        <!-- HEADER CINEMATOGRÁFICO LIMPIO -->
     <header style="min-height: 100vh; 
-                   background: linear-gradient(rgba(5,0,25,0.75), rgba(0,10,40,0.88)), 
+                   background: linear-gradient(rgba(5,0,25,0.8), rgba(0,10,40,0.9)), 
                                url('https://images.unsplash.com/photo-1462331940025-5ec7f0e9d0e4?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
                    display: flex; 
                    flex-direction: column; 
@@ -24,22 +131,16 @@
                    position: relative;
                    overflow: hidden;">
 
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(0,255,255,0.12) 0%, transparent 70%);"></div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(0,255,255,0.1) 0%, transparent 70%);"></div>
 
         <img src="LOGO.png" alt="CAZADOR" class="logo" 
-             style="max-width: 720px; width: 80%; margin-bottom: 35px; filter: drop-shadow(0 0 80px rgba(0,255,255,0.9));">
+             style="max-width: 720px; width: 80%; margin-bottom: 40px; filter: drop-shadow(0 0 70px rgba(0,255,255,0.85));">
 
-        <img src="MANOLO10.jpeg" alt="Dr. Manolo Fernández Díaz" 
-             style="max-width: 360px; width: 65%; border-radius: 50%; 
-                    border: 5px solid rgba(0,255,255,0.7); 
-                    box-shadow: 0 0 80px rgba(0,255,255,0.8); 
-                    margin-bottom: 35px;">
-
-        <p class="subtitle" style="font-size: 2.7rem; font-weight: 900; letter-spacing: 4px; 
+                <p class="subtitle" style="font-size: 2.65rem; font-weight: 900; letter-spacing: 4px; 
                                   background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff); 
                                   -webkit-background-clip: text; 
                                   -webkit-text-fill-color: transparent; 
-                                  text-shadow: 0 0 50px rgba(0,255,255,0.9);">
+                                  text-shadow: 0 0 45px rgba(0,255,255,0.9);">
             PLATAFORMA CIENTÍFICA QUE RASTREA, PRESERVA Y REVELA<br>
             EL CONOCIMIENTO QUE EL MUNDO IGNORA
         </p>
@@ -48,7 +149,8 @@
             CIENCIA EN DEFENSA DE LA VIDA
         </div>
     </header>
-        <!-- ARCHIVO -->
+
+    <!-- ARCHIVO -->
     <div class="section" id="archivo">
         <h2>🧬 ARCHIVO</h2>
         <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 40px; text-align:center; margin-bottom:60px;">
