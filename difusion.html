@@ -15,7 +15,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/difusion.css">
-    <script src="scripts/analytics-config.js"></script>
+    <!-- Google Analytics 4 — CAZADOR FARVET -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K16QGHXJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7K16QGHXJN', { anonymize_ip: true });
+      window.CAZADOR_ANALYTICS = { MEASUREMENT_ID: 'G-7K16QGHXJN', SITE_NAME: 'CAZADOR FARVET', ENABLED: true };
+    </script>
     <script src="scripts/analytics.js" defer></script>
 </head>
 <body>

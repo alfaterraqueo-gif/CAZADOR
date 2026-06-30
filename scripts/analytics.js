@@ -1,44 +1,20 @@
-/* Monitoreo de visitas y eventos — Google Analytics 4 */
+/* Monitoreo de eventos — Google Analytics 4 (gtag en index.html) */
 (function () {
   'use strict';
 
   const cfg = window.CAZADOR_ANALYTICS || {};
-  const ID = (cfg.MEASUREMENT_ID || '').trim();
-  const enabled = cfg.ENABLED !== false;
-  const isValid = enabled && /^G-[A-Z0-9]+$/.test(ID) && !ID.includes('XXXX');
+  const ID = (cfg.MEASUREMENT_ID || 'G-7K16QGHXJN').trim();
+  const isValid = cfg.ENABLED !== false && /^G-[A-Z0-9]+$/.test(ID);
 
-  window.cazadorTrack = function (eventName, params) {
-    if (!isValid || typeof gtag !== 'function') return;
-    gtag('event', eventName, Object.assign({ send_to: ID }, params || {}));
-  };
-
-  if (!isValid) {
-    console.info('[CAZADOR Analytics] Sin ID de medición. Edita scripts/analytics-config.js');
+  if (!isValid || typeof gtag !== 'function') {
+    console.info('[CAZADOR Analytics] gtag no disponible');
     return;
   }
 
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ID);
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = gtag;
-
-  gtag('js', new Date());
-  gtag('config', ID, {
-    send_page_view: true,
-    anonymize_ip: true,
-    cookie_flags: 'SameSite=None;Secure'
-  });
-
-  gtag('event', 'page_view', {
-    page_title: document.title,
-    page_location: window.location.href,
-    page_path: window.location.pathname,
-    site_name: cfg.SITE_NAME || 'CAZADOR'
-  });
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  window.cazadorTrack = function (eventName, params) {
+    gtag('event', eventName, params || {});
+  };
 
   function linkLabel(el) {
     return (el.getAttribute('aria-label')
@@ -96,7 +72,7 @@
         const id = entry.target.id;
         if (!id || seen.has(id)) return;
         seen.add(id);
-        window.cazadorTrack('ver_seccion', { event_category: 'scroll', section_id: id, section_name: id });
+        window.cazadorTrack('ver_seccion', { event_category: 'scroll', section_id: id });
       });
     }, { threshold: [0.35] });
     sections.forEach(function (sec) { obs.observe(sec); });
