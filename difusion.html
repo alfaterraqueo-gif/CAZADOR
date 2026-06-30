@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAZADOR — Compartir Repositorio Científico</title>
+    <meta name="description" content="CAZADOR: Repositorio Científico Vivo del Dr. Manolo Fernández Díaz. Documentales 8K, archivo PDF y ciencia peruana.">
+    <meta property="og:title" content="CAZADOR — Repositorio Científico Vivo">
+    <meta property="og:description" content="Rastrea, preserva y revela el conocimiento científico que el mundo ignora. Documentales, archivo y ciencia peruana.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfaterraqueo-gif.github.io/CAZADOR/difusion.html">
+    <meta property="og:image" content="https://alfaterraqueo-gif.github.io/CAZADOR/portada-difusion-16x9.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/difusion.css">
+</head>
+<body>
+
+<div class="difusion-wrap">
+
+    <!-- PORTADA 16:9 -->
+    <div class="portada-16x9">
+        <img src="portada-difusion-16x9.jpg" alt="CAZADOR — Portada Científica" class="portada-bg" id="portada-img">
+        <div class="portada-overlay"></div>
+        <div class="portada-rays"></div>
+        <div class="portada-flare"></div>
+        <div class="portada-content">
+            <span class="portada-badge">● En línea · Archivo vivo</span>
+            <img src="LOGO.png" alt="CAZADOR" class="portada-logo">
+            <h1 class="portada-title">CAZADOR</h1>
+            <p class="portada-sub">Repositorio Científico Vivo — Dr. Manolo Fernández Díaz</p>
+            <p class="portada-tagline">Documentales 8K · Archivo PDF · Ciencia Peruana</p>
+        </div>
+    </div>
+
+    <!-- ENLACE PRINCIPAL -->
+    <div class="link-block">
+        <p class="link-label">🔗 Enlace del repositorio — Clic para entrar</p>
+        <a href="https://alfaterraqueo-gif.github.io/CAZADOR/" class="link-main" id="site-link" target="_blank" rel="noopener">
+            <span class="arrow">▶</span>
+            <span>alfaterraqueo-gif.github.io/CAZADOR/</span>
+        </a>
+        <br>
+        <a href="https://github.com/alfaterraqueo-gif/CAZADOR" class="link-repo" target="_blank" rel="noopener">
+            Ver en GitHub → github.com/alfaterraqueo-gif/CAZADOR
+        </a>
+    </div>
+
+    <!-- COMPARTIR -->
+    <div class="share-section">
+        <p class="share-title">Difundir por redes</p>
+        <div class="share-grid">
+            <a href="#" class="share-btn share-btn--wa" id="share-wa" target="_blank" rel="noopener">📱 WhatsApp</a>
+            <a href="#" class="share-btn share-btn--fb" id="share-fb" target="_blank" rel="noopener">📘 Facebook</a>
+            <a href="#" class="share-btn share-btn--x" id="share-x" target="_blank" rel="noopener">𝕏 X / Twitter</a>
+            <a href="#" class="share-btn share-btn--tg" id="share-tg" target="_blank" rel="noopener">✈️ Telegram</a>
+            <button class="share-btn share-btn--copy" id="btn-copy" type="button">📋 Copiar enlace</button>
+            <a href="index.html" class="share-btn share-btn--site">🧬 Entrar al sitio</a>
+        </div>
+    </div>
+
+    <footer class="difusion-footer">
+        CAZADOR — Ciencia Peruana en Defensa de la Vida<br>
+        Director: Alejandro Rojas Celadita · <a href="index.html">Volver al repositorio</a>
+    </footer>
+</div>
+
+<div class="copy-toast" id="copy-toast">✓ Enlace copiado — ¡Listo para pegar!</div>
+
+<script>
+(function () {
+    const SITE = 'https://alfaterraqueo-gif.github.io/CAZADOR/';
+    const SHARE_PAGE = 'https://alfaterraqueo-gif.github.io/CAZADOR/difusion.html';
+    const MSG = '🧬 CAZADOR — Repositorio Científico Vivo\n\nDocumentales 8K, archivo PDF y ciencia peruana del Dr. Manolo Fernández Díaz.\n\n👉 ' + SITE;
+
+    document.getElementById('share-wa').href =
+        'https://wa.me/?text=' + encodeURIComponent(MSG);
+
+    document.getElementById('share-fb').href =
+        'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SHARE_PAGE);
+
+    document.getElementById('share-x').href =
+        'https://twitter.com/intent/tweet?text=' + encodeURIComponent('🧬 CAZADOR — Repositorio Científico Vivo. Documentales, archivo PDF y ciencia peruana.') +
+        '&url=' + encodeURIComponent(SITE);
+
+    document.getElementById('share-tg').href =
+        'https://t.me/share/url?url=' + encodeURIComponent(SITE) +
+        '&text=' + encodeURIComponent('🧬 CAZADOR — Repositorio Científico Vivo');
+
+    document.getElementById('btn-copy').addEventListener('click', function () {
+        const text = SITE;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(showToast).catch(fallbackCopy);
+        } else {
+            fallbackCopy();
+        }
+        function fallbackCopy() {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast();
+        }
+        function showToast() {
+            const t = document.getElementById('copy-toast');
+            t.classList.add('show');
+            setTimeout(function () { t.classList.remove('show'); }, 2800);
+        }
+    });
+
+    /* Fallback si la imagen generada no carga */
+    document.getElementById('portada-img').addEventListener('error', function () {
+        this.style.display = 'none';
+        this.parentElement.style.background =
+            'linear-gradient(135deg, #040a18 0%, #0a1830 40%, #1a0a20 100%)';
+    });
+})();
+</script>
+</body>
+</html>
