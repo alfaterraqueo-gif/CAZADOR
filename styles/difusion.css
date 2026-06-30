@@ -168,12 +168,12 @@ body::before {
 
 .portada-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+  font-size: clamp(0.78rem, 1.8vw, 1.15rem);
   font-style: italic;
   color: rgba(255,255,255,0.85);
   margin-top: 8px;
-  max-width: 90%;
-  line-height: 1.4;
+  max-width: 92%;
+  line-height: 1.35;
 }
 
 .portada-tagline {

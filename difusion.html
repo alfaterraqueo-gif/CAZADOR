@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAZADOR — Compartir Repositorio Científico</title>
-    <meta name="description" content="CAZADOR: Repositorio Científico Vivo del Dr. Manolo Fernández Díaz. Documentales 8K, archivo PDF y ciencia peruana.">
-    <meta property="og:title" content="CAZADOR — Repositorio Científico Vivo">
-    <meta property="og:description" content="Rastrea, preserva y revela el conocimiento científico que el mundo ignora. Documentales, archivo y ciencia peruana.">
+    <title>FARVET — Compartir Repositorio Científico</title>
+    <meta name="description" content="Repositorio Científico FARVET basado en el pensamiento científico del Dr. Manolo Clemente Fernández Díaz. Documentales 8K, archivo PDF y ciencia peruana.">
+    <meta property="og:title" content="Repositorio Científico FARVET — Dr. Manolo Clemente Fernández Díaz">
+    <meta property="og:description" content="Basado en el pensamiento científico del Dr. Manolo Clemente Fernández Díaz. Documentales, archivo y ciencia peruana.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alfaterraqueo-gif.github.io/CAZADOR/difusion.html">
     <meta property="og:image" content="https://alfaterraqueo-gif.github.io/CAZADOR/portada-difusion-16x9.jpg">
@@ -22,16 +22,16 @@
 
     <!-- PORTADA 16:9 -->
     <div class="portada-16x9">
-        <img src="portada-difusion-16x9.jpg" alt="CAZADOR — Portada Científica" class="portada-bg" id="portada-img">
+        <img src="portada-difusion-16x9.jpg" alt="Repositorio Científico FARVET — Portada" class="portada-bg" id="portada-img">
         <div class="portada-overlay"></div>
         <div class="portada-rays"></div>
         <div class="portada-flare"></div>
         <div class="portada-content">
-            <span class="portada-badge">● En línea · Archivo vivo</span>
-            <img src="LOGO.png" alt="CAZADOR" class="portada-logo">
-            <h1 class="portada-title">CAZADOR</h1>
-            <p class="portada-sub">Repositorio Científico Vivo — Dr. Manolo Fernández Díaz</p>
-            <p class="portada-tagline">Documentales 8K · Archivo PDF · Ciencia Peruana</p>
+            <span class="portada-badge">● Repositorio Científico · Grupo FARVET</span>
+            <img src="LOGO.png" alt="FARVET" class="portada-logo">
+            <h1 class="portada-title">FARVET</h1>
+            <p class="portada-sub">Basado en el pensamiento científico del Dr. Manolo Clemente Fernández Díaz</p>
+            <p class="portada-tagline">CAZADOR · Documentales 8K · Archivo PDF · Ciencia Peruana</p>
         </div>
     </div>
 
@@ -62,7 +62,7 @@
     </div>
 
     <footer class="difusion-footer">
-        CAZADOR — Ciencia Peruana en Defensa de la Vida<br>
+        Repositorio Científico FARVET — Grupo FARVET<br>
         Director: Alejandro Rojas Celadita · <a href="index.html">Volver al repositorio</a>
     </footer>
 </div>
@@ -73,7 +73,7 @@
 (function () {
     const SITE = 'https://alfaterraqueo-gif.github.io/CAZADOR/';
     const SHARE_PAGE = 'https://alfaterraqueo-gif.github.io/CAZADOR/difusion.html';
-    const MSG = '🧬 CAZADOR — Repositorio Científico Vivo\n\nDocumentales 8K, archivo PDF y ciencia peruana del Dr. Manolo Fernández Díaz.\n\n👉 ' + SITE;
+    const MSG = '🧬 REPOSITORIO CIENTÍFICO FARVET\nBasado en el pensamiento científico del Dr. Manolo Clemente Fernández Díaz\n\nDocumentales 8K, archivo PDF y ciencia peruana — Programa CAZADOR.\n\n👉 ' + SITE;
 
     document.getElementById('share-wa').href =
         'https://wa.me/?text=' + encodeURIComponent(MSG);
@@ -82,12 +82,12 @@
         'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SHARE_PAGE);
 
     document.getElementById('share-x').href =
-        'https://twitter.com/intent/tweet?text=' + encodeURIComponent('🧬 CAZADOR — Repositorio Científico Vivo. Documentales, archivo PDF y ciencia peruana.') +
+        'https://twitter.com/intent/tweet?text=' + encodeURIComponent('🧬 Repositorio Científico FARVET — Dr. Manolo Clemente Fernández Díaz. Documentales, archivo PDF y ciencia peruana.') +
         '&url=' + encodeURIComponent(SITE);
 
     document.getElementById('share-tg').href =
         'https://t.me/share/url?url=' + encodeURIComponent(SITE) +
-        '&text=' + encodeURIComponent('🧬 CAZADOR — Repositorio Científico Vivo');
+        '&text=' + encodeURIComponent('🧬 Repositorio Científico FARVET — Dr. Manolo Clemente Fernández Díaz');
 
     document.getElementById('btn-copy').addEventListener('click', function () {
         const text = SITE;
