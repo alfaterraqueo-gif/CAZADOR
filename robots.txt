@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cazador-ciencia-peruana.netlify.app/sitemap.xml

@@ -3,316 +3,661 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAZADOR – Archivo Científico Vivo</title>
-    <style>
-        :root { --neon-pink: #ff00ff; --neon-blue: #00ffff; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; background: #0a001f; color: white; scroll-behavior: smooth; }
-
-        nav { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: rgba(10,10,30,0.95); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 12px 25px; z-index: 1000; box-shadow: 0 0 30px rgba(0,255,255,0.4); }
-        nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; }
-
-        header { min-height: 100vh; background: linear-gradient(rgba(5,0,25,0.85), rgba(0,10,40,0.9)), url('https://images.unsplash.com/photo-1462331940025-5ec7f0e9d0e4?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
-
-        .logo { max-width: 720px; width: 80%; margin-bottom: 30px; filter: drop-shadow(0 0 60px rgba(0,255,255,0.8)); }
-
-        .subtitle { font-size: 2.4rem; font-weight: 900; letter-spacing: 3px; background: linear-gradient(90deg, #00ffff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,255,255,0.8); }
-
-        .section { padding: 120px 5% 80px; max-width: 1200px; margin: 40px auto; background: rgba(10,5,40,0.95); border: 1px solid rgba(0,255,255,0.3); border-radius: 20px; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
-
-            .pdf-card, .video-card {
-            background: rgba(15, 8, 50, 0.85);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pdf-card::before, .video-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, transparent 70%);
-            opacity: 0;
-            transition: all 0.6s;
-        }
-
-        .pdf-card:hover::before, .video-card:hover::before {
-            opacity: 1;
-            transform: rotate(30deg);
-        }
-
-        .pdf-card:hover, .video-card:hover {
-            transform: translateY(-18px) scale(1.04);
-            border-color: #ff00ff;
-            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.4);
-        }
-
-        .video-card {
-            height: 520px;
-            background-size: cover;
-            background-position: center;
-        }
-        .overlay {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.95));
-            padding: 40px 20px 30px;
-        }
-        .btn {
-            margin-top: 15px;
-            padding: 14px 35px;
-            background: var(--neon-pink);
-            color: black;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-        }
-                /* === ANIMACIONES PARA DAR VIDA === */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes neonGlow {
-            0% { text-shadow: 0 0 10px #00ffff; }
-            50% { text-shadow: 0 0 40px #00ffff, 0 0 60px #ff00ff; }
-            100% { text-shadow: 0 0 10px #00ffff; }
-        }
-
-        .section { animation: fadeInUp 0.8s ease forwards; }
-
-        .video-card, .pdf-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .video-card:hover, .pdf-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
-            border-color: #ff00ff;
-        }
-
-        h2 { animation: neonGlow 4s infinite alternate; }
-
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
-        }
-    </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7K16QGHXJN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7K16QGHXJN');
-</script>
+    <title>CAZADOR — Repositorio Científico Vivo</title>
+    <meta name="description" content="Archivo científico vivo del Dr. Manolo Fernández Díaz. Documentales, artículos, genómica, vacunas y divulgación científica peruana.">
+    <meta name="keywords" content="CAZADOR, ciencia peruana, FARVET, Manolo Fernández, vacunas, genómica, documentales científicos">
+    <meta name="author" content="Alejandro Rojas Celadita">
+    <meta property="og:title" content="CAZADOR — Repositorio Científico Vivo">
+    <meta property="og:description" content="Rastrea, preserva y revela el conocimiento científico que el mundo ignora.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfaterraqueo-gif.github.io/CAZADOR/">
+    <meta property="og:image" content="https://alfaterraqueo-gif.github.io/CAZADOR/LOGO.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://alfaterraqueo-gif.github.io/CAZADOR/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/cinema.css">
 </head>
 <body>
 
-     <nav>
-        <a href="#archivo">🧬 ARCHIVO</a>
-        <a href="#videos">📹 VIDEOS</a>
-        <a href="#radio">📻 RADIO</a>
-        <a href="#revista">📰 REVISTA</a>
-    </nav>
+<div class="cursor-ring"></div>
+<div class="cursor-dot"></div>
 
-        <!-- HEADER CINEMATOGRÁFICO LIMPIO -->
-    <header style="min-height: 100vh; 
-                   background: linear-gradient(rgba(5,0,25,0.8), rgba(0,10,40,0.9)), 
-                               url('https://images.unsplash.com/photo-1462331940025-5ec7f0e9d0e4?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
-                   display: flex; 
-                   flex-direction: column; 
-                   align-items: center; 
-                   justify-content: center; 
-                   text-align: center; 
-                   position: relative;
-                   overflow: hidden;">
+<div class="loader" id="loader">
+    <div class="loader-dna"></div>
+    <div class="loader-text">Inicializando archivo genético</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
 
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(0,255,255,0.1) 0%, transparent 70%);"></div>
+<canvas id="particle-canvas"></canvas>
+<canvas id="helix-canvas"></canvas>
+<canvas id="tech-grid-canvas"></canvas>
+<div class="aurora-layer"></div>
+<div class="light-beams"></div>
+<div class="hex-overlay"></div>
+<div class="scan-line"></div>
+<div class="film-grain"></div>
+<div class="vignette"></div>
 
-        <img src="LOGO.png" alt="CAZADOR" class="logo" 
-             style="max-width: 720px; width: 80%; margin-bottom: 40px; filter: drop-shadow(0 0 70px rgba(0,255,255,0.85));">
+<nav class="nav">
+    <a href="#inicio" class="nav-brand">
+        <img src="LOGO.png" alt="CAZADOR">
+        <span>CAZADOR</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menú">☰</button>
+    <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#cientifico">Científico</a></li>
+        <li><a href="#documentales">Documentales</a></li>
+        <li><a href="#reflexion">Miércoles</a></li>
+        <li><a href="#promociones">Promociones</a></li>
+        <li><a href="#archivo">Archivo</a></li>
+        <li><a href="#radio">Radio</a></li>
+        <li><a href="#redes">Redes</a></li>
+    </ul>
+</nav>
 
-                <p class="subtitle" style="font-size: 2.65rem; font-weight: 900; letter-spacing: 4px; 
-                                  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff); 
-                                  -webkit-background-clip: text; 
-                                  -webkit-text-fill-color: transparent; 
-                                  text-shadow: 0 0 45px rgba(0,255,255,0.9);">
-            PLATAFORMA CIENTÍFICA QUE RASTREA, PRESERVA Y REVELA<br>
-            EL CONOCIMIENTO QUE EL MUNDO IGNORA
-        </p>
-
-        <div style="margin-top: 20px; padding: 14px 55px; border: 1px solid #00ffff; border-radius: 50px; font-size: 1.25rem;">
-            CIENCIA EN DEFENSA DE LA VIDA
-        </div>
-    </header>
-
-    <!-- ARCHIVO -->
-    <div class="section" id="archivo">
-        <h2>🧬 ARCHIVO</h2>
-        <div style="background:#111; border:2px solid #ff00ff; border-radius:20px; padding:60px 40px; text-align:center; margin-bottom:60px;">
-            <h3>Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
-            <p style="font-size:1.25rem; max-width:950px; margin:25px auto;">
-                Médico Veterinario, destacado científico con un Ph.D. en Biología. Especialista en producción de vacunas vivas, inactivadas y recombinantes para uso agropecuario. Investigador Principal de la Universidad Nacional "San Luis Gonzaga" de Ica, Gerente General del Grupo FARVET. Profesor Extraordinario y Doctor Honoris Causa.
-            </p>
-        </div>
-        <div class="grid">
-            <div class="pdf-card"><p><strong>ALIANZA FARVET Y BASE2BIO</strong></p><a href="ALIANZA FARVET Y BASE2BIO.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>DOS VISIONES UN SOLO VECTOR</strong></p><a href="DOS VISIONES UN SOLO VECTOR.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>DESPIERTA PERÚ</strong></p><a href="despierta-peru.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>ELEGIR BIEN ES CONSTRUIR UN DESTINO EXITOSO</strong></p><a href="elegir-bien-es-construir-un-destino-exitoso.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>FARVET SAC - 43 AÑOS DE HISTORIA CIENTÍFICA</strong></p><a href="farvet-sac-43-años-de-historia-cientifica.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>EL PERÚ ES UN GIGANTE</strong></p><a href="el-perú-es-un-gigante.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>LA FELICIDAD QUE NACE DE SOLTAR</strong></p><a href="la-felicidad-que-nace-de-soltar.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>LA FALSA PROMESA DE LA VACUNA UNIVERSAL</strong></p><a href="la-falsa-promesa-de-la-vacuna-universal.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>LAS ENFERMEDADES DE TRANSMISIÓN SEXUAL</strong></p><a href="las-enfermedades-de-transmision-sexual.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>LA RINCONADA Y EL PERÚ</strong></p><a href="la-rinconada-y-el-peru.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>LA VIBRACIÓN SECRETA DE LA VIDA</strong></p><a href="la-vibracion-secreta-de-la-vida.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-            <div class="pdf-card"><p><strong>NUTRICIÓN Y LONGEVIDAD</strong></p><a href="nutricion-y-longevidad.pdf" class="btn" target="_blank">⬇ Descargar</a></div>
-        </div>
+<!-- HERO -->
+<section class="hero" id="inicio" data-section>
+    <div class="hero-badge">Archivo científico vivo · En línea</div>
+    <img src="LOGO.png" alt="CAZADOR — Ciencia Peruana" class="hero-logo">
+    <p class="hero-title">Repositorio Científico</p>
+    <p class="hero-subtitle">Plataforma científica que rastrea, preserva y revela el conocimiento que el mundo ignora</p>
+    <div class="hero-cta">
+        <a href="#cientifico" class="btn-primary">🧬 Conocer al científico</a>
+        <a href="#documentales" class="btn-ghost">▶ Explorar documentales</a>
     </div>
-        <!-- VIDEOS - Versión Corregida y Uniforme -->
-    <div class="section" id="videos">
-        <h2>📹 VIDEOS</h2>
-        <div class="grid">
+    <div class="scroll-hint">
+        <span>Descender</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
 
-            <div class="video-card" style="background-image: url('ChatGPT Image 27 mar 2026, 13_13_25.png');">
-                <div class="overlay">
-                    <h3>La Vibración Secreta de la Verdad</h3>
-                    <p>El Código Oculto del Pensamiento Fernández</p>
-                    <a href="https://www.facebook.com/reel/1329560222394383" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
+<!-- DR. MANOLO — BIOGRAFÍA -->
+<section class="section scientist-stage" id="cientifico" data-section>
+    <div class="section-header reveal">
+        <span class="section-eyebrow">🧬 CIENTÍFICO</span>
+        <h2 class="section-title">Dr. Manolo <span class="accent">Fernández Díaz</span></h2>
+        <div class="section-line"></div>
+    </div>
 
-            <div class="video-card" style="background-image: url('video02.jpg');">
-                <div class="overlay">
-                    <h3>Nutrición y Longevidad</h3>
-                    <p>Matusalén, los Telómeros y el Reloj Biológico</p>
-                    <a href="https://www.facebook.com/reel/1490981482359283" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
+    <div class="scientist-showcase reveal">
+        <div class="scientist-portrait-wrap">
+            <div class="portrait-orbit portrait-orbit--1"></div>
+            <div class="portrait-orbit portrait-orbit--2"></div>
+            <div class="portrait-orbit portrait-orbit--3"></div>
+            <div class="portrait-halo"></div>
+            <div class="portrait-frame">
+                <div class="portrait-hologram"></div>
+                <div class="portrait-scan"></div>
+                <div class="portrait-grid"></div>
+                <img src="manolo-cientifico.png" alt="Dr. Manolo Clemente Fernández Díaz" class="portrait-img" width="400" height="500">
+                <div class="portrait-corner portrait-corner--tl"></div>
+                <div class="portrait-corner portrait-corner--tr"></div>
+                <div class="portrait-corner portrait-corner--bl"></div>
+                <div class="portrait-corner portrait-corner--br"></div>
             </div>
+            <canvas class="portrait-particles" aria-hidden="true"></canvas>
+        </div>
 
-            <div class="video-card" style="background-image: url('video-03.jpg.jpg');">
-                <div class="overlay">
-                    <h3>Dos Visiones un Solo Vector</h3>
-                    <p>La batalla científica contra gobernantes incrédulos</p>
-                    <a href="https://www.facebook.com/reel/1310674777593360" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
+        <div class="scientist-bio-panel">
+            <div class="bio-badge">
+                <span class="bio-pulse"></span>
+                Investigador Principal · UNSLG Ica
             </div>
-
-            <div class="video-card" style="background-image: url('video-04.jpg.png');">
-                <div class="overlay">
-                    <h3>Protocolo de Remisión Sistémica del Cáncer</h3>
-                    <p>Entender la vida… es el primer paso para defenderla</p>
-                    <a href="https://www.facebook.com/reel/1462099518751976" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
+            <h3 class="scientist-name">Dr. MANOLO CLEMENTE FERNÁNDEZ DÍAZ</h3>
+            <p class="scientist-role">Médico Veterinario · Ph.D. en Biología</p>
+            <p class="scientist-bio-text">Médico Veterinario, destacado científico con un Ph.D. en Biología. Especialista en producción de vacunas vivas, inactivadas y recombinantes para uso agropecuario. Investigador Principal de la Universidad Nacional "San Luis Gonzaga" de Ica, Gerente General del Grupo FARVET. Profesor Extraordinario y Doctor Honoris Causa.</p>
+            <div class="scientist-credentials">
+                <span class="credential-chip">Vacunas Vivas</span>
+                <span class="credential-chip">Genómica</span>
+                <span class="credential-chip">FARVET</span>
+                <span class="credential-chip">Biología Molecular</span>
+                <span class="credential-chip">Doctor Honoris Causa</span>
             </div>
-
-            <div class="video-card" style="background-image: url('video-05.jpg.png');">
-                <div class="overlay">
-                    <h3>Secuenciación del Genoma</h3>
-                    <p>La Ciencia Peruana no se Detiene… Evoluciona</p>
-                    <a href="https://www.facebook.com/reel/1681471199534726" class="btn" target="_blank">▶ Ver Video</a>
+            <div class="scientist-stats">
+                <div class="stat-item">
+                    <span class="stat-value" data-count="20" data-suffix="+">0+</span>
+                    <span class="stat-label">Años de experiencia</span>
                 </div>
-            </div>
-
-            <div class="video-card" style="background-image: url('portada-la-felicidad-no-nace-de-soltar.jpg');">
-                <div class="overlay">
-                    <h3>La Felicidad que Nace de Soltar</h3>
-                    <p>Mensaje científicamente humanista que busca la armonía consigo mismo</p>
-                    <a href="https://www.facebook.com/reel/977029444712854" class="btn" target="_blank">▶ Ver Video</a>
+                <div class="stat-item">
+                    <span class="stat-value">Ph.D.</span>
+                    <span class="stat-label">Biología</span>
                 </div>
-            </div>
-
-            <div class="video-card" style="background-image: url('portada-la-verdadera-sabiduria.jpg');">
-                <div class="overlay">
-                    <h3>La Verdadera Sabiduría Surge de la Calma Interior</h3>
-                    <p>Reflexión reciente del Dr. Manolo Fernández Díaz</p>
-                    <a href="https://www.facebook.com/reel/1494885554833521" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-
-            <div class="video-card" style="background-image: url('peru-hace-historia-ia-10-preguntas.jpg');">
-                <div class="overlay">
-                    <h3>Perú Hace Historia con IA</h3>
-                    <p>10 Preguntas Clave</p>
-                    <a href="https://www.facebook.com/reel/1278509941075269" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-
-            <div class="video-card" style="background-image: url('el-sistema-de-vision-bionica-que-busca-devolver-la-percepcion-visual.jpeg');">
-                <div class="overlay">
-                    <h3>El Sistema de Visión Biónica</h3>
-                    <p>Que busca devolver la percepción visual</p>
-                    <a href="https://www.facebook.com/reel/2027091255358242" class="btn" target="_blank">▶ Ver Video</a>
-                </div>
-            </div>
-            <!-- NUEVO VIDEO -->
-            <div class="video-card" style="background-image: url('la-falsa-promesa-de-la-vacuna-universal.jpg');">
-                <div class="overlay">
-                    <h3>La Falsa Promesa de la Vacuna Universal</h3>
-                    <p>Dr. Manolo Fernández Díaz</p>
-                    <a href="https://www.facebook.com/reel/1138431615126775" class="btn" target="_blank">▶ Ver Video</a>
+                <div class="stat-item">
+                    <span class="stat-value">UNSLG</span>
+                    <span class="stat-label">Ica, Perú</span>
                 </div>
             </div>
         </div>
     </div>
-          <!-- RADIO CAZADOR - Nombres Claros y Funcionando -->
-    <div class="section" id="radio">
-        <h2>📻 RADIO CAZADOR</h2>
-        
-        <div style="max-width: 900px; margin: 0 auto;">
+</section>
 
-            <div style="margin: 25px 0; padding: 25px; background: rgba(15,8,50,0.95); border: 2px solid #00ffff; border-radius: 20px;">
-                <p style="font-size: 1.35rem; margin-bottom: 15px; color: #00ffff;"><strong>1. El Perú es un Gigante</strong></p>
-                <audio controls style="width: 100%;">
+<!-- DOCUMENTALES CIENTÍFICOS -->
+<section class="section" id="documentales" data-section>
+    <div class="section-header reveal">
+        <span class="section-eyebrow">📹 VIDEOS</span>
+        <h2 class="section-title">Documentales <span class="accent">Científicos</span></h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="films-grid">
+        <article class="film-card film-card--cinematic film-card--epic film-card--nino reveal" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="la-era-del-nino.jpg" alt="La Era del Niño" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-nino-glow"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XX · CLIMATOLOGÍA</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">LA ERA DEL NIÑO</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">El fenómeno oceánico que redefine el clima global — CAZADOR Ciencia Peruana</p>
+                <a href="https://www.facebook.com/reel/1205681464984521" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--epic film-card--storm reveal reveal-delay-1" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="el-peru-en-la-tormenta-perfecta-2026.jpg" alt="El Perú en la Tormenta Perfecta 2026" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-storm-glow"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XIX · CLIMATOLOGÍA</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">EL PERÚ EN LA TORMENTA PERFECTA</span>
+                    <span class="title-line title-line--sub">2026 · EL NIÑO Y ALERTA ROJA AVICOLA</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">La sincronización climática que desafía al país — CAZADOR Ciencia Peruana</p>
+                <a href="https://www.facebook.com/reel/1074049585051552" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--epic film-card--immune reveal reveal-delay-2" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="el-sistema-inmune-no-adivina-el-futuro.png" alt="El Sistema Inmune no Adivina el Futuro" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-immune-glow"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XVIII · INMUNOLOGÍA</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">EL SISTEMA INMUNE</span>
+                    <span class="title-line title-line--sub">NO ADIVINA EL FUTURO</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">La defensa biológica frente a lo desconocido — CAZADOR Ciencia Peruana</p>
+                <a href="https://www.facebook.com/reel/886137043883179" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--epic film-card--dna reveal reveal-delay-3" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="adn-llave-inmortal.png" alt="ADN — La Llave Inmortal" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-dna-glow"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XVII · GENÉTICA</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">ADN<span class="title-dot">:</span> LA LLAVE</span>
+                    <span class="title-line title-line--sub">INMORTAL</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">El código secreto de la vida eterna — CAZADOR Ciencia Peruana</p>
+                <a href="https://www.facebook.com/reel/1538076554653536" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--epic film-card--fire reveal reveal-delay-3" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="cuando-el-conocimiento-se-incendia.png" alt="Cuando el Conocimiento se Incendia" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XVI · CONOCIMIENTO</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">CUANDO EL CONOCIMIENTO</span>
+                    <span class="title-line title-line--sub">SE INCENDIA</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">La llama del saber que transforma la ciencia — CAZADOR Ciencia Peruana</p>
+                <a href="https://www.facebook.com/reel/938992255852367" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--epic reveal reveal-delay-3" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="supra-conciencia-el-poder-invisible.png" alt="Supra Conciencia — El Poder Invisible" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XIV · SUPRA CONCIENCIA</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">SUPRA CONCIENCIA</span>
+                    <span class="title-line title-line--sub">EL PODER INVISIBLE</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">Ver lo invisible para lograr lo imposible — CAZADOR Ciencia Peruana</p>
+                <a href="https://www.facebook.com/reel/2415031035661268" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic reveal reveal-delay-3" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="cancer-en-su-hora-final.png" alt="Cáncer, en su Hora Final" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XIII · ONCOLOGÍA</p>
+                <h3 class="film-title film-title--cinema">CÁNCER<span class="title-dot">:</span> EN SU HORA FINAL</h3>
+                <p class="film-desc film-desc--cinema">Cuando la ciencia enfrenta el tiempo — Dr. Manolo Fernández Díaz</p>
+                <a href="https://www.facebook.com/reel/1530333685368364" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal" data-tilt>
+            <div class="film-card-inner"><img src="ChatGPT%20Image%2027%20mar%202026,%2013_13_25.png" alt="La Vibración Secreta de la Verdad" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">La Vibración Secreta de la Verdad</h3>
+                <p class="film-desc">El Código Oculto del Pensamiento Fernández</p>
+                <a href="https://www.facebook.com/reel/1329560222394383" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal" data-tilt>
+            <div class="film-card-inner"><img src="video02.jpg" alt="Nutrición y Longevidad" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">Nutrición y Longevidad</h3>
+                <p class="film-desc">Matusalén, los Telómeros y el Reloj Biológico</p>
+                <a href="https://www.facebook.com/reel/1490981482359283" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal" data-tilt>
+            <div class="film-card-inner"><img src="video-03.jpg.jpg" alt="Dos Visiones un Solo Vector" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">Dos Visiones un Solo Vector</h3>
+                <p class="film-desc">La batalla científica contra gobernantes incrédulos</p>
+                <a href="https://www.facebook.com/reel/1310674777593360" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal" data-tilt>
+            <div class="film-card-inner"><img src="video-04.jpg.png" alt="Protocolo de Remisión Sistémica del Cáncer" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">Protocolo de Remisión Sistémica del Cáncer</h3>
+                <p class="film-desc">Entender la vida… es el primer paso para defenderla</p>
+                <a href="https://www.facebook.com/reel/1462099518751976" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal" data-tilt>
+            <div class="film-card-inner"><img src="video-05.jpg.png" alt="Secuenciación del Genoma" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">Secuenciación del Genoma</h3>
+                <p class="film-desc">La Ciencia Peruana no se Detiene… Evoluciona</p>
+                <a href="https://www.facebook.com/reel/1681471199534726" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal reveal-delay-2" data-tilt>
+            <div class="film-card-inner"><img src="peru-hace-historia-ia-10-preguntas.jpg" alt="Perú Hace Historia con IA" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">Perú Hace Historia con IA</h3>
+                <p class="film-desc">10 Preguntas Clave</p>
+                <a href="https://www.facebook.com/reel/1278509941075269" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal" data-tilt>
+            <div class="film-card-inner"><img src="el-sistema-de-vision-bionica-que-busca-devolver-la-percepcion-visual.jpeg" alt="El Sistema de Visión Biónica" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">El Sistema de Visión Biónica</h3>
+                <p class="film-desc">Que busca devolver la percepción visual</p>
+                <a href="https://www.facebook.com/reel/2027091255358242" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal reveal-delay-1" data-tilt>
+            <div class="film-card-inner"><img src="la-falsa-promesa-de-la-vacuna-universal.jpg" alt="La Falsa Promesa de la Vacuna Universal" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">La Falsa Promesa de la Vacuna Universal</h3>
+                <p class="film-desc">Dr. Manolo Fernández Díaz</p>
+                <a href="https://www.facebook.com/reel/1138431615126775" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- MIÉRCOLES DE REFLEXIÓN -->
+<section class="section reflexion-stage" id="reflexion" data-section>
+    <div class="section-header reveal">
+        <span class="section-eyebrow">🌙 MIÉRCOLES</span>
+        <h2 class="section-title">Miércoles de <span class="accent">Reflexión</span></h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle reveal">Espacio de pensamiento crítico · Historia, fuego y responsabilidad</p>
+    </div>
+
+    <div class="reflexion-showcase">
+        <article class="film-card film-card--cinematic film-card--epic film-card--reflexion film-card--politica reveal" data-tilt>
+            <span class="film-badge">NUEVO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="calculo-politico.png?v=2" alt="Cálculo Político" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">REFLEXIÓN II · POLÍTICA</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">CÁLCULO</span>
+                    <span class="title-line title-line--sub">POLÍTICO</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">Pensamiento crítico desde San Marcos — Dr. Manolo Fernández Díaz</p>
+                <a href="https://www.facebook.com/reel/1318313369841719" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--epic film-card--reflexion reveal reveal-delay-1" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="la-historia-no-se-repite-sola.jpg" alt="La Historia no se Repite Sola" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">REFLEXIÓN I · HISTORIA</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">LA HISTORIA NO SE REPITE</span>
+                    <span class="title-line title-line--sub">SOLA</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">Somos nosotros quienes la encendemos o quienes podemos apagar el fuego — Dr. Manolo Fernández Díaz</p>
+                <a href="https://www.facebook.com/61576497906048/videos/pcb.122134802054883263/928624350238790" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal reveal-delay-2" data-tilt>
+            <div class="film-card-inner"><img src="portada-la-felicidad-no-nace-de-soltar.jpg" alt="La Felicidad que Nace de Soltar" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">La Felicidad que Nace de Soltar</h3>
+                <p class="film-desc">Mensaje científicamente humanista que busca la armonía consigo mismo</p>
+                <a href="https://www.facebook.com/reel/977029444712854" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card reveal reveal-delay-3" data-tilt>
+            <div class="film-card-inner"><img src="portada-la-verdadera-sabiduria.jpg" alt="La Verdadera Sabiduría Surge de la Calma Interior" loading="lazy"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <h3 class="film-title">La Verdadera Sabiduría Surge de la Calma Interior</h3>
+                <p class="film-desc">Reflexión reciente del Dr. Manolo Fernández Díaz</p>
+                <a href="https://www.facebook.com/reel/1494885554833521" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- PROMOCIONES CINEMÁTICAS -->
+<section class="section promociones-stage" id="promociones" data-section>
+    <div class="section-header reveal">
+        <span class="section-eyebrow">🎬 PROMOCIONES</span>
+        <h2 class="section-title">Promociones <span class="accent">Cinemáticas</span></h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle reveal">Avances espectaculares · Ciencia en formato de cine</p>
+    </div>
+
+    <div class="promociones-showcase">
+        <article class="film-card film-card--cinematic film-card--epic film-card--promo reveal" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="sabado-cientifico.png" alt="Sábado Científico" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-spotlight"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">PROMO I · SÁBADO</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">SÁBADO</span>
+                    <span class="title-line title-line--sub">CIENTÍFICO</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">Saturday Science — La ciencia peruana en su máxima expresión</p>
+                <a href="https://www.facebook.com/reel/1045727594452923" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--promo reveal reveal-delay-1" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="manolo-fernandez-zoom.png" alt="Zoom Científico — Dr. Manolo Fernández Díaz" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-spotlight"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XI · EN VIVO</p>
+                <h3 class="film-title film-title--cinema">ZOOM CIENTÍFICO<span class="title-dot">:</span> EN DIRECTO</h3>
+                <p class="film-desc film-desc--cinema">Ph.D. Dr. Manolo Fernández Díaz — Ciencia sin filtros</p>
+                <a href="https://www.facebook.com/reel/833987116441302" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--promo reveal reveal-delay-2" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="virus-newcastle.png" alt="Virus Newcastle" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-spotlight"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XII · VIROLOGÍA</p>
+                <h3 class="film-title film-title--cinema">VIRUS NEWCASTLE<span class="title-dot">:</span> ALIADO CONTRA EL CÁNCER</h3>
+                <p class="film-desc film-desc--cinema">Ciencia veterinaria en acción — FARVET · CAZADOR Ciencia Peruana</p>
+                <a href="https://www.facebook.com/reel/991507490507208" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+        <article class="film-card film-card--cinematic film-card--epic film-card--promo reveal reveal-delay-3" data-tilt>
+            <span class="film-badge">ESTRENO</span>
+            <div class="film-card-inner film-card-inner--8k"><img src="ciencia-peruana-en-defensa-de-la-vida.png" alt="Ciencia Peruana en Defensa de la Vida" loading="eager" decoding="async"></div>
+            <div class="film-lens-flare"></div>
+            <div class="film-cinematic-rays"></div>
+            <div class="film-spotlight"></div>
+            <div class="film-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <div class="film-info">
+                <p class="film-chapter">CAPÍTULO XV · CAZADOR</p>
+                <h3 class="film-title film-title--cinema film-title--epic">
+                    <span class="title-line">CIENCIA PERUANA</span>
+                    <span class="title-line title-line--sub">EN DEFENSA DE LA VIDA</span>
+                </h3>
+                <p class="film-desc film-desc--cinema">La ciencia que protege al Perú — Dr. Manolo Fernández Díaz</p>
+                <a href="https://www.facebook.com/reel/3626224367517239" class="film-link" target="_blank" rel="noopener">▶ Ver Video</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ARCHIVO -->
+<section class="section" id="archivo" data-section>
+    <div class="section-header reveal">
+        <span class="section-eyebrow">🧬 ARCHIVO</span>
+        <h2 class="section-title">Archivo <span class="accent">Científico</span></h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="archive-grid">
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">HANTAVIRUS — MIEDO, VERDAD Y MANIPULACIÓN</h3>
+            <a href="hantavirus-miedo-verdad-manipulacion.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-1" data-tilt>
+            <h3 class="archive-title">EL PELIGRO DE RETROCEDER EN EL CONTROL DE LA LARINGOTRAQUEÍTIS AVIAR EN EL PERÚ</h3>
+            <a href="el-peligro-de-retroceder-laringotraqueitis-aviar-peru.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-2" data-tilt>
+            <h3 class="archive-title">LA REVOLUCIÓN DE LAS PROTEÍNAS — AVANCES EN PÉPTIDOS PARA NUTRICIÓN, ONCOLOGÍA Y LONGEVIDAD</h3>
+            <a href="la-revolucion-de-las-proteinas.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-3" data-tilt>
+            <h3 class="archive-title">EL FRAUDE ELECTORAL</h3>
+            <a href="el-fraude-electoral.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">EL SISTEMA INMUNE NO ADIVINA EL FUTURO</h3>
+            <a href="el-sistema-inmune-no-adivina-el-futuro.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">EL PERÚ EN LA TORMENTA PERFECTA 2026 — LA SINCRONIZACIÓN DE EL NIÑO Y LA ALERTA ROJA AVICOLA</h3>
+            <a href="el-peru-en-la-tormenta-perfecta-2026.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">ALIANZA FARVET Y BASE2BIO</h3>
+            <a href="ALIANZA FARVET Y BASE2BIO.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">DOS VISIONES UN SOLO VECTOR</h3>
+            <a href="DOS VISIONES UN SOLO VECTOR.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">DESPIERTA PERÚ</h3>
+            <a href="despierta-peru.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">ELEGIR BIEN ES CONSTRUIR UN DESTINO EXITOSO</h3>
+            <a href="elegir-bien-es-construir-un-destino-exitoso.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">FARVET SAC - 43 AÑOS DE HISTORIA CIENTÍFICA</h3>
+            <a href="farvet-sac-43-años-de-historia-cientifica.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-1" data-tilt>
+            <h3 class="archive-title">EL PERÚ ES UN GIGANTE</h3>
+            <a href="el-peru-es-un-gigante.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-2" data-tilt>
+            <h3 class="archive-title">LA FELICIDAD QUE NACE DE SOLTAR</h3>
+            <a href="la-felicidad-que-nace-de-soltar.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-3" data-tilt>
+            <h3 class="archive-title">LA FALSA PROMESA DE LA VACUNA UNIVERSAL</h3>
+            <a href="la-falsa-promesa-de-la-vacuna-universal.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal" data-tilt>
+            <h3 class="archive-title">LAS ENFERMEDADES DE TRANSMISIÓN SEXUAL</h3>
+            <a href="las-enfermedades-de-transmision-sexual.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-1" data-tilt>
+            <h3 class="archive-title">LA RINCONADA Y EL PERÚ</h3>
+            <a href="la-rinconada-y-el-peru.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-2" data-tilt>
+            <h3 class="archive-title">LA VIBRACIÓN SECRETA DE LA VIDA</h3>
+            <a href="la-vibracion-secreta-de-la-vida.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+        <article class="archive-card reveal reveal-delay-3" data-tilt>
+            <h3 class="archive-title">NUTRICIÓN Y LONGEVIDAD</h3>
+            <a href="nutricion-y-longevidad.pdf" class="archive-dl btn-dl" target="_blank">⬇ Descargar</a>
+        </article>
+    </div>
+</section>
+
+<!-- RADIO -->
+<section class="section" id="radio" data-section>
+    <div class="section-header reveal">
+        <span class="section-eyebrow">📻 RADIO CAZADOR</span>
+        <h2 class="section-title">Radio <span class="accent">Cazador</span></h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="radio-stage reveal">
+        <div class="radio-header">
+            <h3 class="radio-title">CIENCIA SIN FILTROS</h3>
+        </div>
+        <div class="radio-tracks">
+            <div class="radio-track">
+                <p class="radio-track-title">1. El Perú es un Gigante</p>
+                <div class="radio-player">
+                    <button class="radio-play-btn" aria-label="Reproducir">▶</button>
+                    <div class="radio-waveform"><canvas></canvas></div>
+                    <span class="radio-time">0:00 / 0:00</span>
+                </div>
+                <audio class="hidden-audio" preload="metadata">
                     <source src="https://archive.org/download/el-peru-es-un-gigante/el-peru-es-un-gigante.mp3" type="audio/mpeg">
                 </audio>
             </div>
-
-            <div style="margin: 25px 0; padding: 25px; background: rgba(15,8,50,0.95); border: 2px solid #00ffff; border-radius: 20px;">
-                <p style="font-size: 1.35rem; margin-bottom: 15px; color: #00ffff;"><strong>2. Farvet y Base2Bio</strong></p>
-                <audio controls style="width: 100%;">
+            <div class="radio-track">
+                <p class="radio-track-title">2. Farvet y Base2Bio</p>
+                <div class="radio-player">
+                    <button class="radio-play-btn" aria-label="Reproducir">▶</button>
+                    <div class="radio-waveform"><canvas></canvas></div>
+                    <span class="radio-time">0:00 / 0:00</span>
+                </div>
+                <audio class="hidden-audio" preload="metadata">
                     <source src="https://archive.org/download/farvet-y-base2bio/farvet-y-base2bio.mp3" type="audio/mpeg">
                 </audio>
             </div>
-
-            <div style="margin: 25px 0; padding: 25px; background: rgba(15,8,50,0.95); border: 2px solid #00ffff; border-radius: 20px;">
-                <p style="font-size: 1.35rem; margin-bottom: 15px; color: #00ffff;"><strong>3. Dos Visiones Un Solo Vector Contra El Covid 19</strong></p>
-                <audio controls style="width: 100%;">
+            <div class="radio-track">
+                <p class="radio-track-title">3. Dos Visiones Un Solo Vector Contra El Covid 19</p>
+                <div class="radio-player">
+                    <button class="radio-play-btn" aria-label="Reproducir">▶</button>
+                    <div class="radio-waveform"><canvas></canvas></div>
+                    <span class="radio-time">0:00 / 0:00</span>
+                </div>
+                <audio class="hidden-audio" preload="metadata">
                     <source src="https://archive.org/download/dos-visiones-un-solo-vector-contra-el-covid-19/dos-visiones-un-solo-vector-contra-el-covid-19.mp3" type="audio/mpeg">
                 </audio>
             </div>
-
-                      <!-- Audio 4 - Hantavirus -->
-            <div style="margin: 25px 0; padding: 25px; background: rgba(15,8,50,0.95); border: 2px solid #00ffff; border-radius: 20px;">
-                <p style="font-size: 1.35rem; margin-bottom: 15px; color: #00ffff;"><strong>4. Hantavirus: Entre el miedo, la verdad y la manipulación social</strong></p>
-                <audio controls style="width: 100%;">
+            <div class="radio-track">
+                <p class="radio-track-title">4. Hantavirus: Entre el miedo, la verdad y la manipulación social</p>
+                <div class="radio-player">
+                    <button class="radio-play-btn" aria-label="Reproducir">▶</button>
+                    <div class="radio-waveform"><canvas></canvas></div>
+                    <span class="radio-time">0:00 / 0:00</span>
+                </div>
+                <audio class="hidden-audio" preload="metadata">
                     <source src="https://archive.org/download/hantavirus-entre-el-miedo-la-verdad-y-la-manipulacio-n-social/HANTAVIRUS%20ENTRE%20EL%20MIEDO%2C%20LA%20VERDAD%20Y%20LA%20MANIPULACI%C3%93N%20SOCIAL.mp3" type="audio/mpeg">
                 </audio>
             </div>
-
         </div>
     </div>
+</section>
 
-        </div>
-    </div>
-        </div>
+<!-- REDES -->
+<section class="section" id="redes" data-section>
+    <div class="section-header reveal">
+        <span class="section-eyebrow">🌎 Latinoamérica</span>
+        <h2 class="section-title">Síguenos <span class="accent">En Vivo</span></h2>
+        <div class="section-line"></div>
     </div>
 
-    <footer style="text-align:center; padding:80px; background:#000;">
-        <p>CAZADOR – Alejandro Rojas Celadita - Director - 2026</p>
-    </footer>
+    <div class="social-grid">
+        <a href="https://www.facebook.com/profile.php?id=61576497906048" class="social-card reveal" target="_blank" rel="noopener">
+            <div class="social-icon">📘</div>
+            <h3>Facebook</h3>
+            <p>Reels y documentales semanales</p>
+        </a>
+        <a href="https://www.youtube.com/channel/UCVrKpqWv-hZSmsm3gujlRWw" class="social-card reveal reveal-delay-1" target="_blank" rel="noopener">
+            <div class="social-icon">▶️</div>
+            <h3>YouTube</h3>
+            <p>Canal oficial CAZADOR</p>
+        </a>
+        <a href="https://archive.org/details/el-peru-es-un-gigante" class="social-card reveal reveal-delay-2" target="_blank" rel="noopener">
+            <div class="social-icon">📻</div>
+            <h3>Archive.org</h3>
+            <p>Radio Cazador — audios gratuitos</p>
+        </a>
+        <a href="https://www.tiktok.com/@mundoenllamas4" class="social-card reveal reveal-delay-3" target="_blank" rel="noopener">
+            <div class="social-icon">🎵</div>
+            <h3>TikTok</h3>
+            <p>@mundoenllamas4</p>
+        </a>
+        <a href="https://x.com/LlamasMundo" class="social-card reveal" target="_blank" rel="noopener">
+            <div class="social-icon">𝕏</div>
+            <h3>X</h3>
+            <p>@LlamasMundo</p>
+        </a>
+    </div>
+
+    <div class="disclaimer reveal">
+        Contenido de divulgación científica basado en artículos del Dr. Manolo Fernández Díaz. No sustituye consulta médica o veterinaria profesional.
+    </div>
+</section>
+
+<footer>
+    <img src="LOGO.png" alt="" class="footer-logo">
+    <p>CAZADOR — Ciencia Peruana en Defensa de la Vida</p>
+    <p>Director: Alejandro Rojas Celadita · Dr. Manolo Clemente Fernández Díaz</p>
+    <p><a href="https://www.facebook.com/profile.php?id=61576497906048">Facebook</a> · <a href="https://www.youtube.com/channel/UCVrKpqWv-hZSmsm3gujlRWw">YouTube</a> · <a href="https://www.tiktok.com/@mundoenllamas4">TikTok</a> · <a href="https://x.com/LlamasMundo">X</a></p>
+</footer>
+
+<script src="scripts/cinema.js"></script>
+</body>
+</html>
